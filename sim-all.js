@@ -452,6 +452,18 @@ if (process.argv[3] === 'v13') {
   [7, 8, 9, 10, 11, 12, 13, 14].forEach(function (n) { CONFIGS.push({ group: 'v13', name: n + ' 人 v13 預設', args: ['--players', n, '--seed', 3] }); });
 }
 
+// v14 (消音器清自己和四鄰格) 現狀  node sim-all.js 300 v14a
+if (process.argv[3] === 'v14a') {
+  CONFIGS = [];
+  [7, 8, 9, 10, 11, 12, 13, 14].forEach(function (n) { [1, 2].forEach(function (seed) { CONFIGS.push({ group: n + '人', name: n + ' 人 種子' + seed, args: ['--players', n, '--seed', seed] }); }); });
+}
+
+// v14 (消音器清自己和四鄰格) 現狀  node sim-all.js 300 v14a
+if (process.argv[3] === 'v14a') {
+  CONFIGS = [];
+  [7, 8, 9, 10, 11, 12, 13, 14].forEach(function (n) { [1, 2].forEach(function (seed) { CONFIGS.push({ group: n + '人', name: n + ' 人 種子' + seed, args: ['--players', n, '--seed', seed] }); }); });
+}
+
 function run(cfg) {
   return new Promise(function (resolve) {
     var args = [__dirname + '/sim.js', '--games', GAMES, '--json'].concat(cfg.args).map(String);

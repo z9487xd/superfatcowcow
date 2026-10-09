@@ -6,9 +6,9 @@
 - 狀態存記憶體，每次動作自動存一份到 `localStorage`，筆電當掉可還原。
 - 為投影設計：深色底、高對比、大字。
 
-依最初的建置需求與規則書 v6 實作，並經模擬測試修正為 **規則 v13**。
+依最初的建置需求與規則書 v6 實作，並經模擬測試修正為 **規則 v14**。
 
-- **玩家看的規則：`說明書.md`**（v13，現行預設）
+- **玩家看的規則：`說明書.md`**（v14，現行預設）
 - **模擬測試數據：`平衡測試報告.md`**（約 5 萬場電腦對局、規則演變）
 - **待辦與改進想法：`設計改進方案.md`**（還沒實作）
 
@@ -31,7 +31,7 @@ npm start           # → http://localhost:5173
 
 牛的演算法是唯一不能錯的部分，附完整單元測試：
 ```bash
-npm test            # node 執行，33 項全綠
+npm test            # node 執行，34 項全綠
 ```
 或用瀏覽器開 `tests.html` 看結果。
 
@@ -139,7 +139,7 @@ npm run sim:all                    # 全部人數 × 規則變體, 各 100 場 (
 - `timeoutCowWins: 1`：第 12 回合結束沒人達成 → 牛贏。
 - `teamTransfer: 1`：所有陣營都能把任意數量的樣本交給同房、同陣營的隊友（`engine.js` 的 `giveSamples`、`canTransfer`）。
 - `dropAllowed: 1`：可以把樣本丟在地上，任何人用互動卡撿（`dropSamples`）。
-- 毒死優先（`state.cow.dead`）；只有逃亡者能從出口離開（`tryLeaveViaExit`）；只有屠夫能下毒（`declareLure`）；殘響的手牌是移動／誘導／互動，互動只能操作回聲器，用過任兩張全部收回（`ECHO_CARDS`）。
+- 毒死優先（`state.cow.dead`）；只有逃亡者能從出口離開（`tryLeaveViaExit`）；只有屠夫能下毒（`declareLure`）；消音器清自己和四鄰格（`silencerRadius`）；殘響的手牌是移動／誘導／互動，互動只能操作回聲器，用過任兩張全部收回（`ECHO_CARDS`）。
 - 測試用開關（預設關閉）：`breederTransfer: 1`、`breederWinAny: 0/2`、`cowLateBonus`；設成 0 可回到舊規則的開關：`firstWinEnds`、`timeoutCowWins`。
 
 ### 未實作（規則書標為「待實測」或需要現場人判斷的變體）

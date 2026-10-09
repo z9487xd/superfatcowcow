@@ -508,7 +508,11 @@
       if (take > 0) { room.boxRemaining -= take; player.samples += take; msg.push('取得 ' + take + ' 樣本'); }
       else msg.push('樣本箱已空');
     } else if (room.device === 'silencer') {
-      room.noise = 0; room.poison = false; msg.push('消音: 噪點歸 0');
+      // v14: 自己這格 + 上下左右四格 (隔著牆也算) 噪點歸 0, 毒也清掉。silencerRadius = 0 回到只清自己這格
+      var cleared = [player.cell];
+      if (state.config.silencerRadius) neighbors(player.cell, state.N).forEach(function (nb) { cleared.push(nb.cell); });
+      cleared.forEach(function (c) { state.rooms[c].noise = 0; state.rooms[c].poison = false; });
+      msg.push('消音: ' + cleared.map(function (c) { return cellName(c, state.N); }).join('、') + ' 噪點歸 0');
     } else if (room.device === 'decoy') {
       addNoise(state, player.cell, state.config.decoyNoise, false); msg.push('誘餌槽 +' + state.config.decoyNoise);
     } else if (room.device === 'echo') {

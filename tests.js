@@ -333,6 +333,21 @@
     eq(f.samples, 0, '殘響不能拿樣本箱'); eq(t.rooms[6].boxRemaining, 5, '箱子沒少'); eq(t.rooms[6].noise, 1, '照樣 +1 噪點');
   });
 
+  test('消音器: 自己這格和上下左右四格 (隔牆也算) 噪點歸 0、毒清掉; 斜角不受影響', function () {
+    var s = blankState(5);
+    s.phase = 'declare';
+    var p = addPlayer(s, 12, 'runner');                 // 中央 C3
+    s.rooms[12].device = 'silencer'; s.rooms[12].noise = 5;
+    [7, 11, 13, 17].forEach(function (c) { s.rooms[c].noise = 4; });
+    s.rooms[13].poison = true; addWall(s, 12, 13);      // 隔著牆的鄰格也清
+    s.rooms[6].noise = 4;                               // 斜角
+    s.flips[p.id] = ['interact', 'move'];
+    E.declareCard(s, p.id, 'interact', {});
+    [12, 7, 11, 13, 17].forEach(function (c) { eq(s.rooms[c].noise, 0, '格 ' + c + ' 歸 0'); });
+    assert(!s.rooms[13].poison, '隔牆鄰格的毒也清掉');
+    eq(s.rooms[6].noise, 4, '斜角不受影響');
+  });
+
   // ============ v12: 同陣營交付 / 丟在地上 ============
   function transferState() {
     var s = blankState(5);
