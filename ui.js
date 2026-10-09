@@ -872,7 +872,8 @@
   function openFlip() {
     var st = G.state; if (st.phase !== 'flip') return;
     $('flipTitle').textContent = '第 ' + st.round + ' 回合 — 翻牌登錄';
-    G.flipSel = {};
+    // 同一回合內保留已點的牌 (中途關掉面板去看地圖, 回來不用重點)
+    if (G.flipSelRound !== st.round || !G.flipSel) { G.flipSel = {}; G.flipSelRound = st.round; }
     var grid = $('flipGrid');
     var cards = ['move', 'env', 'interact', 'lure', 'reset'];
     var html = '<tr><th>玩家</th>' + cards.map(function (c) { return '<th>' + CARD_LABEL[c] + '</th>'; }).join('') + '<th>需/已</th></tr>';
@@ -880,13 +881,14 @@
       if (p.leftGame) return;
       var need = E.expectedCardCount(st, p);
       var avail = E.handList(p);
-      html += '<tr data-pid="' + p.id + '"' + (need === 0 ? ' class="done"' : '') + '><td><b>' + escapeHtml(p.name) + '</b> <span class="pill bg-' + p.faction + '">' + FAC_LABEL[p.faction] + '</span>' + (p.echo ? ' <span class="pill mute">殘響</span>' : '') + '</td>';
+      var sel = (G.flipSel[p.id] || []).filter(function (c) { return avail.indexOf(c) >= 0; }).slice(0, need);
+      G.flipSel[p.id] = sel;
+      html += '<tr data-pid="' + p.id + '"' + (sel.length === need ? ' class="done"' : '') + '><td><b>' + escapeHtml(p.name) + '</b> <span class="pill bg-' + p.faction + '">' + FAC_LABEL[p.faction] + '</span>' + (p.echo ? ' <span class="pill mute">殘響</span>' : '') + '</td>';
       cards.forEach(function (c) {
-        if (avail.indexOf(c) >= 0) html += '<td><button class="cbtn" data-pid="' + p.id + '" data-card="' + c + '">' + CARD_ICON[c] + ' ' + CARD_LABEL[c] + '</button></td>';
+        if (avail.indexOf(c) >= 0) html += '<td><button class="cbtn' + (sel.indexOf(c) >= 0 ? ' on' : '') + '" data-pid="' + p.id + '" data-card="' + c + '">' + CARD_ICON[c] + ' ' + CARD_LABEL[c] + '</button></td>';
         else html += '<td><span style="opacity:.2">—</span></td>';
       });
-      html += '<td><span class="need" data-pid="' + p.id + '">0/' + need + '</span></td></tr>';
-      G.flipSel[p.id] = [];
+      html += '<td><span class="need" data-pid="' + p.id + '">' + sel.length + '/' + need + '</span></td></tr>';
     });
     grid.innerHTML = html;
     Array.prototype.forEach.call(grid.querySelectorAll('.cbtn'), function (b) {
@@ -931,10 +933,11 @@
       });
       E.buildQueue(st);
     } catch (e) { $('flipHint').textContent = '登錄錯誤: ' + e.message; G.undo.pop(); return; }
-    G.declare = null;
+    G.declare = null; G.flipSel = null;
     $('flipOverlay').classList.add('hidden');
     autosave(); render();
   };
+  $('flipPeek').onclick = function () { $('flipOverlay').classList.add('hidden'); toast('已點的牌會保留。看完地圖按「📝 開啟登錄面板」或 Enter 回來。', true); };
 
   // ================= 開場設定精靈 =================
   function initWizard() {
