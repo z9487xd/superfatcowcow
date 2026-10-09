@@ -408,6 +408,50 @@ if (process.argv[3] === 'v12') {
   [7, 8, 9, 10, 11, 12, 13, 14].forEach(function (n) { CONFIGS.push({ group: 'v12', name: n + ' 人 v12 預設', args: ['--players', n, '--seed', 3] }); });
 }
 
+// v13 (陣營人數平均) 現狀  node sim-all.js 300 v13a
+if (process.argv[3] === 'v13a') {
+  CONFIGS = [];
+  [7, 8, 9, 10, 11, 12, 13, 14].forEach(function (n) { [1, 2].forEach(function (seed) { CONFIGS.push({ group: n + '人', name: n + ' 人 種子' + seed, args: ['--players', n, '--seed', seed] }); }); });
+}
+
+// v13 (11、14 人陣營人數調整) 現狀與候選  node sim-all.js 300 v13b
+if (process.argv[3] === 'v13b') {
+  CONFIGS = [];
+  function addL(n, name, sets) { [1, 2].forEach(function (seed) { var a = ['--players', n, '--seed', seed]; sets.forEach(function (kv) { a.push('--set', kv); }); CONFIGS.push({ group: n + '人', name: n + ' 人 ' + name + ' 種子' + seed, args: a }); }); }
+  addL(11, '現狀 (飼6)', []);
+  addL(11, '飼7', ['breederSampleThreshold=7']);
+  addL(11, '飼8', ['breederSampleThreshold=8']);
+  addL(14, '現狀 (飼7)', []);
+  addL(14, '飼8', ['breederSampleThreshold=8']);
+  addL(14, '飼9', ['breederSampleThreshold=9']);
+}
+
+// v13 調整  node sim-all.js 300 v13c
+if (process.argv[3] === 'v13c') {
+  CONFIGS = [];
+  var B13 = { 9: [6, 6], 10: [5, 6], 11: [6, 5], 12: [7, 5], 13: [7, 5], 14: [7, 6] }; // 飼養門檻, 毒效 (v12)
+  function addM(n, name, b, p) { [1, 2].forEach(function (seed) { CONFIGS.push({ group: n + '人', name: n + ' 人 ' + name + ' (飼' + b + '/毒效' + p + ') 種子' + seed, args: ['--players', n, '--seed', seed, '--set', 'breederSampleThreshold=' + b, '--set', 'poisonDuration=' + p] }); }); }
+  [9, 10, 11, 12, 13, 14].forEach(function (n) {
+    var v = B13[n];
+    addM(n, '飼+1', v[0] + 1, v[1]);
+    addM(n, '飼+2', v[0] + 2, v[1]);
+    addM(n, '飼+2 毒效+2', v[0] + 2, v[1] + 2);
+  });
+}
+
+// v13 調整 2  node sim-all.js 300 v13d
+if (process.argv[3] === 'v13d') {
+  CONFIGS = [];
+  function addN(n, b, p) { [1, 2].forEach(function (seed) { CONFIGS.push({ group: n + '人', name: n + ' 人 (飼' + b + '/毒效' + p + ') 種子' + seed, args: ['--players', n, '--seed', seed, '--set', 'breederSampleThreshold=' + b, '--set', 'poisonDuration=' + p] }); }); }
+  addN(9, 7, 8); addN(10, 7, 7); addN(12, 8, 7); addN(13, 8, 6); addN(13, 9, 6);
+}
+
+// v13 最終驗證  node sim-all.js 400 v13
+if (process.argv[3] === 'v13') {
+  CONFIGS = [];
+  [7, 8, 9, 10, 11, 12, 13, 14].forEach(function (n) { CONFIGS.push({ group: 'v13', name: n + ' 人 v13 預設', args: ['--players', n, '--seed', 3] }); });
+}
+
 function run(cfg) {
   return new Promise(function (resolve) {
     var args = [__dirname + '/sim.js', '--games', GAMES, '--json'].concat(cfg.args).map(String);

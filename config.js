@@ -55,11 +55,11 @@
   function tableFor(playerCount) {
     var t = baseTable(playerCount);
     var o = t.overrides;
-    // v12 各人數微調 (誰先達成誰贏 + 時間到牛贏 + 同陣營交付; 見 平衡測試報告.md)
+    // v13 各人數微調 (陣營人數依序加 + 同陣營交付 + 誰先達成誰贏 + 時間到牛贏; 見 平衡測試報告.md)
     //   人數   逃亡門檻 飼養門檻 毒效 每箱 毒死劑數
-    var V12 = { 7: [5, 7, 8, 6, 3], 8: [5, 6, 9, 5, 3], 9: [5, 6, 6, 5, 3], 10: [5, 5, 6, 5, 3],
-      11: [7, 6, 5, 5, 3], 12: [7, 7, 5, 5, 3], 13: [7, 7, 5, 5, 3], 14: [7, 7, 6, 5, 3] }[playerCount];
-    if (V12) { o.runnerSampleThreshold = V12[0]; o.breederSampleThreshold = V12[1]; o.poisonDuration = V12[2]; o.boxSize = V12[3]; o.poisonDoseLimit = V12[4]; }
+    var V13 = { 7: [5, 7, 8, 6, 3], 8: [5, 6, 9, 5, 3], 9: [5, 7, 8, 5, 3], 10: [5, 7, 7, 5, 3],
+      11: [7, 8, 7, 5, 3], 12: [7, 9, 7, 5, 3], 13: [6, 9, 6, 5, 3], 14: [7, 8, 6, 5, 3] }[playerCount];
+    if (V13) { o.runnerSampleThreshold = V13[0]; o.breederSampleThreshold = V13[1]; o.poisonDuration = V13[2]; o.boxSize = V13[3]; o.poisonDoseLimit = V13[4]; }
     return t;
   }
 
@@ -86,15 +86,15 @@
   }
 
   // 陣營配置 (說明書 第 2 節)  index = 人數
-  var FACTION_TABLE = {
+  var FACTION_TABLE = {   // v13: 每多一人依序加給 屠夫 → 逃亡者 → 飼養者 (飼養者永遠最少或並列最少)
     7:  { breeder: 2, butcher: 3, runner: 2 },
     8:  { breeder: 2, butcher: 3, runner: 3 },
-    9:  { breeder: 2, butcher: 4, runner: 3 },
-    10: { breeder: 2, butcher: 4, runner: 4 },
-    11: { breeder: 2, butcher: 5, runner: 4 },
-    12: { breeder: 3, butcher: 5, runner: 4 },
-    13: { breeder: 3, butcher: 5, runner: 5 },
-    14: { breeder: 3, butcher: 6, runner: 5 }
+    9:  { breeder: 3, butcher: 3, runner: 3 },
+    10: { breeder: 3, butcher: 4, runner: 3 },
+    11: { breeder: 3, butcher: 4, runner: 4 },
+    12: { breeder: 4, butcher: 4, runner: 4 },
+    13: { breeder: 4, butcher: 5, runner: 4 },
+    14: { breeder: 4, butcher: 5, runner: 5 }
   };
 
   var api = {

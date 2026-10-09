@@ -215,11 +215,11 @@
     assert(s.factions.breeder.disqualified && !s.factions.breeder.won, '失格');
   });
 
-  test('v12 各人數參數: 逃亡者門檻 / 飼養者門檻 / 牛步數加成 / 牛勝肥度 / 毒效 (照說明書第 2 節表格)', function () {
+  test('v13 各人數參數: 逃亡者門檻 / 飼養者門檻 / 牛步數加成 / 牛勝肥度 / 毒效 (照說明書第 4 節表格)', function () {
     function mk(n) { var ps = []; for (var i = 0; i < n; i++) ps.push({ name: 'P' + i }); return E.newGame({ players: ps, rng: E.mulberry32(3) }); }
     //          逃亡 飼養 步數 肥度勝 毒效
-    var expect = { 7: [5, 7, 1, 9, 8], 8: [5, 6, 1, 9, 9], 9: [5, 6, 1, 9, 6], 10: [5, 5, 1, 9, 6], 11: [7, 6, 2, 9, 5],
-      12: [7, 7, 2, 9, 5], 13: [7, 7, 2, 9, 5], 14: [7, 7, 2, 9, 6] };
+    var expect = { 7: [5, 7, 1, 9, 8], 8: [5, 6, 1, 9, 9], 9: [5, 7, 1, 9, 8], 10: [5, 7, 1, 9, 7], 11: [7, 8, 2, 9, 7],
+      12: [7, 9, 2, 9, 7], 13: [6, 9, 2, 9, 6], 14: [7, 8, 2, 9, 6] };
     Object.keys(expect).forEach(function (n) {
       var g = mk(+n), e = expect[n];
       eq(g.config.runnerSampleThreshold, e[0], n + ' 人逃亡門檻');
