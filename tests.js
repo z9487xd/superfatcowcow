@@ -218,7 +218,7 @@
   test('v13 各人數參數: 逃亡者門檻 / 飼養者門檻 / 牛步數加成 / 牛勝肥度 / 毒效 (照說明書第 4 節表格)', function () {
     function mk(n) { var ps = []; for (var i = 0; i < n; i++) ps.push({ name: 'P' + i }); return E.newGame({ players: ps, rng: E.mulberry32(3) }); }
     //          逃亡 飼養 步數 肥度勝 毒效
-    var expect = { 7: [5, 7, 1, 9, 8], 8: [5, 6, 1, 9, 9], 9: [5, 7, 1, 9, 8], 10: [5, 7, 1, 9, 7], 11: [7, 8, 2, 9, 7],
+    var expect = { 7: [5, 7, 1, 9, 8], 8: [5, 6, 1, 9, 3], 9: [5, 7, 1, 9, 3], 10: [5, 7, 1, 9, 7], 11: [7, 8, 2, 9, 7],
       12: [7, 9, 2, 9, 7], 13: [6, 9, 2, 9, 6], 14: [7, 8, 2, 9, 6] };
     Object.keys(expect).forEach(function (n) {
       var g = mk(+n), e = expect[n];
@@ -231,7 +231,7 @@
     });
     eq(mk(8).config.teamTransfer, 1, '預設同陣營交付'); eq(mk(8).config.dropAllowed, 1, '預設可以丟在地上');
     eq(mk(7).config.boxSize, 6, '7 人每箱 6 個樣本'); eq(mk(14).config.boxSize, 5, '14 人每箱 5 個');
-    eq(mk(14).config.poisonDoseLimit, 3, '14 人也是 3 劑');
+    eq(mk(14).config.poisonDoseLimit, 3, '14 人 3 劑'); eq(mk(8).config.poisonDoseLimit, 2, '8 人 2 劑'); eq(mk(9).config.poisonDoseLimit, 2, '9 人 2 劑'); eq(mk(10).config.poisonDoseLimit, 3, '10 人 3 劑');
     eq(mk(9).config.timeoutCowWins, 1, '預設時間到牛贏');
   });
 
@@ -357,6 +357,26 @@
     es.forEach(function (e) { E.declareCard(s, e.id, 'interact', { echoTarget: 7 }); });
     assert(s.rooms[7].noise <= 50, '6 次連刷, 隔壁 ≤ 50 (不砍半的話會是 135)，實際 ' + s.rooms[7].noise);
     assert(s.rooms[6].noise <= 2, '本格被砍到剩一點');
+  });
+
+  test('毒只維持一回合: 牛沒吃到的毒, 回合結束就消失 (噪點還在)', function () {
+    var s = blankState(5);
+    s.cow.cell = 12; s.cow.fatness = 1;
+    s.rooms[0].noise = 10; s.rooms[0].poison = true;   // 牛 2 步走不到 A1
+    addPlayer(s, 24, 'butcher');
+    E.resolveRound(s);
+    eq(s.cow.doses.length, 0, '沒吃到');
+    assert(!s.rooms[0].poison, '毒消失');
+    assert(s.rooms[0].noise > 0, '噪點還在');
+  });
+  test('樣本箱至少離牛 2 格 (30 張隨機地圖)', function () {
+    for (var g = 0; g < 30; g++) {
+      var n = 7 + (g % 8), ps = []; for (var i = 0; i < n; i++) ps.push({ name: 'P' + i });
+      var st = E.newGame({ players: ps, rng: E.mulberry32(100 + g) });
+      var d = E.bfsDist(st, st.cow.cell);
+      st.rooms.forEach(function (r, idx) { if (r.device === 'sample_box') assert(d[idx] >= 2, '第 ' + g + ' 張圖 ' + E.cellName(idx, st.N) + ' 離牛只有 ' + d[idx]); });
+      eq(st.rooms.filter(function (r) { return r.device === 'sample_box'; }).length, st.table.devices.sample_box, '箱子數量正確');
+    }
   });
 
   // ============ v12: 同陣營交付 / 丟在地上 ============

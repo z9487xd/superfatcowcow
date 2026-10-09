@@ -209,12 +209,19 @@
     var avail = [];
     for (var c2 = 0; c2 < N * N; c2++) if (c2 !== ccenter) avail.push(c2);
     shuffle(avail, rng);
-    var di = 0;
+    // v16: 樣本箱至少離牛 boxMinDist 格 (可通行步數), 先放箱子再放其他裝置
+    var dCow = bfsDist(state, ccenter);
     var devKinds = ['sample_box', 'silencer', 'decoy', 'echo'];
     for (var dk = 0; dk < devKinds.length; dk++) {
       var kind = devKinds[dk], n = table.devices[kind] || 0;
       for (var k = 0; k < n; k++) {
-        var cellD = avail[di++];
+        var pick = -1;
+        for (var ai = 0; ai < avail.length; ai++) {
+          if (kind === 'sample_box' && config.boxMinDist && dCow[avail[ai]] < config.boxMinDist) continue;
+          pick = ai; break;
+        }
+        if (pick < 0) pick = 0; // 理論上不會發生: 找不到夠遠的格子就放第一個
+        var cellD = avail.splice(pick, 1)[0];
         state.rooms[cellD].device = kind;
         if (kind === 'sample_box') state.rooms[cellD].boxRemaining = config.boxSize;
       }
@@ -1114,6 +1121,8 @@
     if (state.gameOver) return null;
     settleNoisePhase(state);
     var mv = applyCowMove(state);
+    // v16: 毒只在下毒的那一回合有效 — 牛吃完 (或沒吃到) 之後, 全場房間的毒都消失
+    if (state.config.poisonOneRound) for (var pr = 0; pr < state.rooms.length; pr++) state.rooms[pr].poison = false;
     // 毒劑計時 -1, 排出到期 (牛已毒死/遊戲已結束就不再排出, 結束畫面才會顯示正確的劑數)
     for (var d = state.gameOver ? -1 : state.cow.doses.length - 1; d >= 0; d--) {
       state.cow.doses[d].left -= 1;

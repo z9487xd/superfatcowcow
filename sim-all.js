@@ -470,6 +470,45 @@ if (process.argv[3] === 'v15a') {
   [7, 8, 9, 10, 11, 12, 13, 14].forEach(function (n) { [1, 2].forEach(function (seed) { CONFIGS.push({ group: n + '人', name: n + ' 人 種子' + seed, args: ['--players', n, '--seed', seed] }); }); });
 }
 
+// v16 (毒一回合 + 箱子離牛 2 格) 現狀  node sim-all.js 300 v16a
+if (process.argv[3] === 'v16a') {
+  CONFIGS = [];
+  [7, 8, 9, 10, 11, 12, 13, 14].forEach(function (n) { [1, 2].forEach(function (seed) { CONFIGS.push({ group: n + '人', name: n + ' 人 種子' + seed, args: ['--players', n, '--seed', seed] }); }); });
+}
+
+// v16 調整  node sim-all.js 300 v16b
+if (process.argv[3] === 'v16b') {
+  CONFIGS = [];
+  function addO(n, name, sets) { [1, 2].forEach(function (seed) { var a = ['--players', n, '--seed', seed]; sets.forEach(function (kv) { a.push('--set', kv); }); CONFIGS.push({ group: n + '人', name: n + ' 人 ' + name + ' 種子' + seed, args: a }); }); }
+  addO(8, '毒效11', ['poisonDuration=11']);
+  addO(8, '毒效11 逃6', ['poisonDuration=11', 'runnerSampleThreshold=6']);
+  addO(9, '毒效10', ['poisonDuration=10']);
+  addO(9, '毒效10 飼8', ['poisonDuration=10', 'breederSampleThreshold=8']);
+}
+
+// v16 調整 2  node sim-all.js 300 v16c
+if (process.argv[3] === 'v16c') {
+  CONFIGS = [];
+  function addP(n, name, sets) { [1, 2].forEach(function (seed) { var a = ['--players', n, '--seed', seed]; sets.forEach(function (kv) { a.push('--set', kv); }); CONFIGS.push({ group: n + '人', name: n + ' 人 ' + name + ' 種子' + seed, args: a }); }); }
+  [8, 9].forEach(function (n) {
+    addP(n, '2劑 毒效3', ['poisonDoseLimit=2', 'poisonDuration=3']);
+    addP(n, '2劑 毒效4', ['poisonDoseLimit=2', 'poisonDuration=4']);
+  });
+}
+
+// v16 調整 3  node sim-all.js 300 v16d
+if (process.argv[3] === 'v16d') {
+  CONFIGS = [];
+  function addQ(n, name, sets) { [1, 2].forEach(function (seed) { var a = ['--players', n, '--seed', seed]; sets.forEach(function (kv) { a.push('--set', kv); }); CONFIGS.push({ group: n + '人', name: n + ' 人 ' + name + ' 種子' + seed, args: a }); }); }
+  [7, 10].forEach(function (n) { addQ(n, '2劑 毒效3', ['poisonDoseLimit=2', 'poisonDuration=3']); });
+}
+
+// v16 最終驗證  node sim-all.js 400 v16
+if (process.argv[3] === 'v16') {
+  CONFIGS = [];
+  [7, 8, 9, 10, 11, 12, 13, 14].forEach(function (n) { CONFIGS.push({ group: 'v16', name: n + ' 人 v16 預設', args: ['--players', n, '--seed', 3] }); });
+}
+
 function run(cfg) {
   return new Promise(function (resolve) {
     var args = [__dirname + '/sim.js', '--games', GAMES, '--json'].concat(cfg.args).map(String);

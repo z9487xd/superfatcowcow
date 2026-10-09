@@ -47,7 +47,7 @@
   function badge(c, x, y, h, text, bg, fg, align) {
     c.font = font(h * 0.62, 800);
     var w = c.measureText(text).width + h * 0.6;
-    var bx = align === 'right' ? x - w : x;
+    var bx = align === 'right' ? x - w : align === 'center' ? x - w / 2 : x;
     rrect(c, bx, y, w, h, h / 2); c.fillStyle = bg; c.fill();
     c.fillStyle = fg; c.textAlign = 'center'; c.textBaseline = 'middle';
     c.fillText(text, bx + w / 2, y + h / 2 + h * 0.03);
@@ -87,6 +87,11 @@
     var scale = Math.max(10, maxNoise);
     var cowCell = opts.cowCell != null ? opts.cowCell : state.cow.cell;
     var late = []; // 噪點數字最後才畫, 不被預告線/準星蓋住
+    // 結算後的噪點 (牛實際看到的數字: 衰減 → 攜帶 → 屍體), 跟現在不同時用小字「→N」標出
+    var pred = null;
+    if (!state.gameOver && state.phase !== 'setup') {
+      try { var pc = E.cloneState(state); pc._noPreview = true; E.settleNoisePhase(pc); pred = pc.rooms.map(function (r) { return r.noise; }); } catch (e) { pred = null; }
+    }
 
     // ---- 房間 ----
     for (var r = 0; r < N; r++) for (var cc = 0; cc < N; cc++) {
@@ -166,14 +171,20 @@
 
       // 中央: 噪點數字 (牛在此格時改到右上角小徽章, 避免被牛蓋住)
       var cyMid = y + w * 0.42;
-      if (room.noise > 0) late.push((function (room, idx, x, y, w, cyMid) { return function () {
+      var pn = pred ? pred[idx] : room.noise, showPred = pred && pn !== room.noise;
+      if (room.noise > 0 || showPred) late.push((function (room, idx, x, y, w, cyMid, pn, showPred) { return function () {
         c.textAlign = 'center'; c.textBaseline = 'middle';
-        if (idx === cowCell) badge(c, x + w - cs * 0.04, y + cs * 0.2, cs * 0.14, (room.poison ? '☣' : '') + room.noise, room.poison ? '#7d3cc7' : '#b2491c', '#fff', 'right');
+        if (idx === cowCell) badge(c, x + w - cs * 0.04, y + cs * 0.2, cs * 0.14, (room.poison ? '☣' : '') + room.noise + (showPred ? '→' + pn : ''), room.poison ? '#7d3cc7' : '#b2491c', '#fff', 'right');
         else {
-          softText(c, String(room.noise), x + w / 2, cyMid, cs * 0.23, room.poison ? '#f0d9ff' : '#ffffff', 800);
-          if (room.poison) softText(c, '☣ 毒', x + w / 2, cyMid + cs * 0.17, cs * 0.085, '#e2b8ff', 700);
+          if (room.noise > 0) softText(c, String(room.noise), x + w / 2, cyMid, cs * 0.23, room.poison ? '#f0d9ff' : '#ffffff', 800);
+          var sub = (room.poison ? '☣ 毒 ' : '') + (showPred ? '→ ' + pn : '');
+          if (sub) {
+            var sy = room.noise > 0 ? cyMid + cs * 0.19 : cyMid;
+            if (showPred) badge(c, x + w / 2, sy - cs * 0.075, cs * 0.15, sub.trim(), room.poison ? 'rgba(125,60,199,0.92)' : 'rgba(255,200,61,0.95)', room.poison ? '#fff' : '#2a1d00', 'center');
+            else softText(c, sub.trim(), x + w / 2, sy, cs * 0.085, '#e2b8ff', 700);
+          }
         }
-      }; })(room, idx, x, y, w, cyMid));
+      }; })(room, idx, x, y, w, cyMid, pn, showPred));
       // 屍體 (左) / 掉落樣本 (右)
       if (room.corpses > 0) {
         c.textAlign = 'left'; c.textBaseline = 'middle';
