@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>超肥牛牛 操作台</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@500;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="app">
+    <main id="stage">
+      <header id="topbar">
+        <div class="brand"><span class="logo">🐮</span><span class="bt"><b>超肥牛牛</b><small>操作台</small></span></div>
+        <div class="bannerwrap"><div id="phaseBanner">超肥牛牛</div></div>
+        <div class="stats">
+          <div class="stat"><small>回合</small><b id="roundNo">—</b><i class="bar"><i id="barRound"></i></i></div>
+          <div class="stat cow"><small>肥度</small><b id="cowFat">1</b><i class="bar"><i id="barFat"></i></i></div>
+          <div class="stat steps"><small>步數</small><b id="cowSteps">2</b></div>
+          <div class="stat poison"><small>中毒</small><b id="cowPoison">0/3</b><i class="bar"><i id="barPoison"></i></i></div>
+        </div>
+      </header>
+
+      <div id="mapWrap">
+        <canvas id="map" width="1000" height="1000"></canvas>
+        <div id="toast" class="hidden"></div>
+      </div>
+
+      <section id="controls" class="hidden">
+        <div class="ctrl-main">
+          <div class="ctrl-text">
+            <div id="ctrlTitle">—</div>
+            <div id="ctrlHint"></div>
+          </div>
+          <div id="ctrlBody"></div>
+        </div>
+        <div id="ctrlBody2">
+          <button class="ghost" id="btnUndo" title="U">↶ 復原</button>
+          <button class="ghost" id="btnUndoRound" title="回合開始">↶↶ 回合開始</button>
+          <button class="ghost" id="btnManual" title="手動修正">🔧 手動修正</button>
+          <button class="ghost" id="btnParams" title="參數">⚙ 參數</button>
+          <button class="ghost" id="btnProjector" title="投影視窗">🖥 投影視窗</button>
+          <button class="ghost" id="btnPure" title="V 切換純顯示">👁 純顯示 (V)</button>
+        </div>
+      </section>
+    </main>
+
+    <aside id="side">
+      <div class="sec">
+        <h3>陣營進度</h3>
+        <div class="prog breeder"><span class="dot"></span><span class="pn">飼養者</span><b id="progBreeder">0/0</b><i class="bar"><i id="barBreeder"></i></i></div>
+        <div class="prog butcher"><span class="dot"></span><span class="pn">屠夫 · 毒</span><b id="progButcher">0/3</b><i class="bar"><i id="barButcher"></i></i></div>
+        <div class="prog runner"><span class="dot"></span><span class="pn">逃亡者</span><b id="progRunner">0 逃出</b><i class="bar"><i id="barRunner"></i></i></div>
+      </div>
+      <div class="sec">
+        <h3>宣告隊列</h3>
+        <div id="queue"></div>
+      </div>
+      <div class="sec">
+        <h3>玩家</h3>
+        <div id="players"></div>
+      </div>
+      <div class="sec">
+        <h3>樣本箱剩餘</h3>
+        <div id="boxes"></div>
+      </div>
+      <div class="sec grow">
+        <h3>回合日誌</h3>
+        <div id="log"></div>
+      </div>
+    </aside>
+  </div>
+
+  <!-- 開場設定精靈 -->
+  <div id="wizard" class="overlay">
+    <div class="card wide">
+      <div class="hero">
+        <span class="hero-logo">🐮</span>
+        <div>
+          <h1>超肥牛牛 <span class="tag">操作台</span></h1>
+          <p class="sub">線下桌遊投影輔助 · 玩家用實體紙牌，這台只負責記錄、算牛、演出來。</p>
+        </div>
+      </div>
+      <div class="wiz">
+        <div>
+          <div class="grid2">
+            <label class="field">人數 (7–14)
+              <input type="number" id="wCount" min="7" max="14" value="8">
+            </label>
+            <label class="field">回合總數
+              <input type="number" id="wRounds" min="4" max="20" value="12">
+            </label>
+          </div>
+          <h2>玩家與陣營</h2>
+          <p class="sub">陣營全公開。可手動調整；留「自動」則隨機分配。</p>
+          <div id="wNames" class="namegrid"></div>
+          <div class="btnrow">
+            <button id="wRegen">🎲 重新生成地圖</button>
+            <button id="wReroll">🔀 重抽陣營</button>
+          </div>
+        </div>
+        <div>
+          <h2 style="margin-top:0">地圖預覽</h2>
+          <canvas id="wMap" width="880" height="880"></canvas>
+          <div class="legend">
+            <span class="lg sample_box">🧪 樣本箱</span><span class="lg silencer">🔇 消音器</span><span class="lg decoy">🍖 誘餌槽</span><span class="lg echo">📡 回聲器</span><span class="lg exit">🚪 出口</span><span class="lg cow">🐮 牛</span>
+          </div>
+        </div>
+      </div>
+      <div class="cardfoot">
+        <button class="primary big" id="wStart">開始遊戲 ▶</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 翻牌登錄 -->
+  <div id="flipOverlay" class="overlay hidden">
+    <div class="card wide">
+      <h1 id="flipTitle">第 1 回合 — 翻牌登錄</h1>
+      <p class="sub">全場同時翻牌後，把每人的出牌敲進去。只顯示手上還有的牌，殘響只點一張。點滿即可。</p>
+      <div class="tablewrap"><table id="flipGrid"></table></div>
+      <div class="cardfoot spread">
+        <span id="flipHint" class="sub"></span>
+        <button class="primary big" id="flipDone">進入依序宣告 ▶</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 手動修正 -->
+  <div id="manualOverlay" class="overlay hidden">
+    <div class="card">
+      <h1>🔧 手動修正</h1>
+      <p class="sub">現場爭議裁定用的後門。任何狀態都能直接改，改完自動存檔。</p>
+      <div id="manualBody"></div>
+      <div class="cardfoot"><button id="manualClose">關閉</button></div>
+    </div>
+  </div>
+
+  <!-- 參數 -->
+  <div id="paramOverlay" class="overlay hidden">
+    <div class="card">
+      <h1>⚙ 參數 (現場可改)</h1>
+      <p class="sub">改完立即生效，不用重開。部分參數 (地圖規模/裝置數) 需重新開局才會套用。</p>
+      <div id="paramBody" class="grid2"></div>
+      <div class="cardfoot"><button id="paramClose">關閉</button></div>
+    </div>
+  </div>
+
+  <!-- 結束畫面 -->
+  <div id="endOverlay" class="overlay hidden">
+    <div class="card">
+      <h1>🏁 遊戲結束</h1>
+      <div id="endBody"></div>
+      <div class="cardfoot">
+        <button class="primary big" id="endRestart">新的一局 ▶</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="config.js"></script>
+  <script src="engine.js"></script>
+  <script src="ui.js"></script>
+</body>
+</html>

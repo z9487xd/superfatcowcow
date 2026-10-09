@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <title>超肥牛牛 — 測試</title>
+  <style>
+    body { background:#0a0e14; color:#eef4fb; font-family:"Noto Sans TC","Microsoft JhengHei",system-ui,sans-serif; padding:30px; }
+    h1 { color:#ffcc33; }
+    .ok { color:#3ad07a; } .fail { color:#ff5566; }
+    pre { font-size:15px; line-height:1.7; }
+    #sum { font-size:22px; font-weight:800; margin:14px 0; }
+  </style>
+</head>
+<body>
+  <h1>超肥牛牛 — 牛演算法測試</h1>
+  <div id="sum"></div>
+  <pre id="out"></pre>
+  <script src="config.js"></script>
+  <script src="engine.js"></script>
+  <script src="tests.js"></script>
+  <script>
+    var r = window.SFCC_TESTS;
+    document.getElementById('sum').innerHTML = '<span class="' + (r.fail ? 'fail' : 'ok') + '">' + r.summary + '</span>';
+    document.getElementById('out').innerHTML = r.results.map(function (t) {
+      return (t.ok ? '<span class="ok">  ✓ </span>' : '<span class="fail">  ✗ </span>') + t.name + (t.ok ? '' : '  → ' + t.err);
+    }).join('\n');
+  </script>
+</body>
+</html>

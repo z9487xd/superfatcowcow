@@ -1,0 +1,12 @@
+{
+  "name": "super-fat-cow-cow",
+  "version": "1.0.0",
+  "description": "超肥牛牛 ── 線下桌遊投影輔助操作台 (單機、無連線)",
+  "private": true,
+  "scripts": {
+    "start": "node server.js",
+    "test": "node tests.js",
+    "sim": "node sim.js",
+    "sim:all": "node sim-all.js 100"
+  }
+}
