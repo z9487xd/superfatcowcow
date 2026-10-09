@@ -464,6 +464,12 @@ if (process.argv[3] === 'v14a') {
   [7, 8, 9, 10, 11, 12, 13, 14].forEach(function (n) { [1, 2].forEach(function (seed) { CONFIGS.push({ group: n + '人', name: n + ' 人 種子' + seed, args: ['--players', n, '--seed', seed] }); }); });
 }
 
+// v15 (回聲器砍半) 驗證  node sim-all.js 300 v15a
+if (process.argv[3] === 'v15a') {
+  CONFIGS = [];
+  [7, 8, 9, 10, 11, 12, 13, 14].forEach(function (n) { [1, 2].forEach(function (seed) { CONFIGS.push({ group: n + '人', name: n + ' 人 種子' + seed, args: ['--players', n, '--seed', seed] }); }); });
+}
+
 function run(cfg) {
   return new Promise(function (resolve) {
     var args = [__dirname + '/sim.js', '--games', GAMES, '--json'].concat(cfg.args).map(String);

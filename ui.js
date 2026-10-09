@@ -698,7 +698,7 @@
     }
     else if (card === 'interact') {
       var room = st.rooms[actor.cell];
-      if (room.device === 'echo') hint.textContent = '回聲器: 點一個相鄰房間，把本房噪點複製過去。';
+      if (room.device === 'echo') hint.textContent = '回聲器: 點一個相鄰房間，把本房噪點複製過去（複製完本房砍半）。';
       else if (actor.echo) { hint.textContent = '殘響的互動只能操作回聲器。這裡沒有回聲器，沒有效果（仍 +1 噪點）。'; addBtn(body, '✔ 確認互動', 'primary', function () { doDeclare('interact', {}); }); }
       else if (room.device === 'silencer') { hint.textContent = '消音器：綠框的格子（自己和上下左右，隔牆也算）噪點歸 0、毒清掉' + (room.dropped ? '，並撿起 ' + room.dropped + ' 個掉落樣本' : '') + '。'; addBtn(body, '✔ 確認互動', 'primary', function () { doDeclare('interact', {}); }); }
       else { hint.textContent = '互動: ' + (room.device ? DEV_LABEL[room.device] : '本房沒有裝置 (無效，仍 +1 噪點)') + (room.dropped ? '，並撿起 ' + room.dropped + ' 個掉落樣本' : '') + '。'; addBtn(body, '✔ 確認互動', 'primary', function () { doDeclare('interact', {}); }); }

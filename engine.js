@@ -466,6 +466,19 @@
     logLine(state, state.round, name(player) + ' 環境: ' + (op === 'add' ? '築牆' : '拆牆') + ' ' + cellName(a, state.N) + '|' + cellName(b, state.N));
   }
 
+  // 回聲器: 把這格目前的噪點複製到相鄰房間 (毒不複製); v15: 複製後這格砍半 (無條件捨去)。echoHalveSource = 0 回到不砍半
+  function echoCopy(state, from, to) {
+    var room = state.rooms[from], n = room.noise;
+    state.rooms[to].noise += n;
+    var txt = '回聲: 複製 ' + n + ' 噪點到 ' + cellName(to, state.N);
+    if (state.config.echoHalveSource) {
+      room.noise = Math.floor(n / 2);
+      if (room.noise <= 0) { room.noise = 0; room.poison = false; }
+      txt += '，本格剩 ' + room.noise;
+    }
+    return txt;
+  }
+
   function declareInteract(state, player, params) {
     ensureHas(state, player, 'interact');
     var room = state.rooms[player.cell];
@@ -476,8 +489,7 @@
       if (room.device === 'echo') {
         var etgt = params.echoTarget;
         if (etgt == null || !areAdjacent(player.cell, etgt, state.N)) throw new Error('回聲器需指定相鄰房間');
-        state.rooms[etgt].noise += room.noise;
-        emsg = '殘響回聲: 複製 ' + room.noise + ' 噪點到 ' + cellName(etgt, state.N);
+        emsg = '殘響' + echoCopy(state, player.cell, etgt);
       }
       consume(state, player, 'interact');
       logLine(state, state.round, name(player) + ' 互動 @' + cellName(player.cell, state.N) + ': ' + emsg);
@@ -518,8 +530,7 @@
     } else if (room.device === 'echo') {
       var tgt = params.echoTarget;
       if (tgt == null || !areAdjacent(player.cell, tgt, state.N)) throw new Error('回聲器需指定相鄰房間');
-      state.rooms[tgt].noise += room.noise; // 複製數值, 毒不複製
-      msg.push('回聲: 複製 ' + room.noise + ' 噪點到 ' + cellName(tgt, state.N));
+      msg.push(echoCopy(state, player.cell, tgt));
     } else if (!room.device && room.dropped === 0 && !(msg.length)) {
       msg.push('無裝置, 無效 (仍 +1 噪點)');
     }

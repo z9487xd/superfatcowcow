@@ -36,6 +36,7 @@
     carryNoisePerSample: 1,     // 攜帶: 身上每個樣本，所在房間 +1/回合
     corpseNoise: 2,             // 屍體: +2/回合，不衰減
     decoyNoise: 5,              // 誘餌槽: 該房間 +5
+    echoHalveSource: 1,         // v15: 回聲器複製後, 自己這格噪點砍半 (無條件捨去); 0 = 不砍半
     silencerRadius: 1,          // v14: 消音器清掉自己這格 + 上下左右四格 (隔牆也算); 0 = 只清自己這格
 
     // 肥度門檻

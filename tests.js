@@ -319,7 +319,7 @@
     s.rooms[6].device = 'echo'; s.rooms[6].noise = 4; s.rooms[6].dropped = 3;
     s.flips[e.id] = ['interact'];
     E.declareCard(s, e.id, 'interact', { echoTarget: 7 });
-    eq(s.rooms[7].noise, 5, '複製 4+1 到相鄰房間');
+    eq(s.rooms[7].noise, 5, '複製 4+1 到相鄰房間'); eq(s.rooms[6].noise, 2, '本格 5 砍半剩 2');
     eq(e.samples, 0, '殘響不會撿樣本'); eq(s.rooms[6].dropped, 3, '地上樣本還在');
     eq(E.handList(e).join(), 'move,lure', '用過互動後剩移動、誘導');
     s.declared = {}; s.flips[e.id] = ['lure'];
@@ -346,6 +346,17 @@
     [12, 7, 11, 13, 17].forEach(function (c) { eq(s.rooms[c].noise, 0, '格 ' + c + ' 歸 0'); });
     assert(!s.rooms[13].poison, '隔牆鄰格的毒也清掉');
     eq(s.rooms[6].noise, 4, '斜角不受影響');
+  });
+
+  test('回聲器砍半: 好幾個人連續刷, 加到隔壁的總量有上限 (不會無限疊)', function () {
+    var s = blankState(5);
+    s.phase = 'declare';
+    s.rooms[6].device = 'echo'; s.rooms[6].noise = 20;
+    var es = [];
+    for (var i = 0; i < 6; i++) { var e = addPlayer(s, 6, 'runner'); e.dead = true; e.echo = true; e.echoUsed = {}; s.flips[e.id] = ['interact']; es.push(e); }
+    es.forEach(function (e) { E.declareCard(s, e.id, 'interact', { echoTarget: 7 }); });
+    assert(s.rooms[7].noise <= 50, '6 次連刷, 隔壁 ≤ 50 (不砍半的話會是 135)，實際 ' + s.rooms[7].noise);
+    assert(s.rooms[6].noise <= 2, '本格被砍到剩一點');
   });
 
   // ============ v12: 同陣營交付 / 丟在地上 ============
