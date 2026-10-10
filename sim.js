@@ -39,6 +39,7 @@ function parseArgs(argv) {
     else if (a === '--reset') o.reset = argv[++i];   // early: 手剩3張就重製 (兩回合一循環) / late: 不得已才重製 (2→2→1)
     else if (a === '--json') o.json = true;
     else if (a === '--coop') o.coop = +argv[++i];
+    else if (a === '--no-spite') o.spite = 0;   // 關掉「阻止別人贏」(舊電腦玩家)
     else if (a === '--dumb') o.dumb = argv[++i].split(',');
     else if (a === '--set') { var kv = argv[++i].split('='); o.set[kv[0]] = +kv[1]; }
   }
@@ -85,6 +86,29 @@ function carrierOf(st) {
     if (!best || x.samples > best.samples) best = x;
   });
   return best;
+}
+
+// ================= 預測這一回合誰會贏 =================
+// 已經離場的逃亡者 → 逃亡者贏; 否則看牛這一步: 帶滿的飼養者被輾、第 N 劑毒、長到牛勝肥度、全員變殘響、最後一回合時間到
+function predictWinners(st, mv) {
+  if (st.gameOver) return st.winners.slice();
+  if (st.players.some(function (q) { return q.leftGame && q.faction === 'runner'; })) return ['runner'];
+  var cfg = st.config, w = [];
+  var killed = {}; if (!mv.stay) mv.killedCells.forEach(function (k) { killed[k] = true; });
+  var alive = st.players.filter(function (q) { return !q.dead && !q.echo && !q.leftGame; });
+  if (alive.some(function (q) { return q.faction === 'breeder' && killed[q.cell] && q.samples >= cfg.breederSampleThreshold; })) w.push('breeder');
+  var poisonDeath = mv.poisonedThisMeal && st.cow.doses.length + 1 >= cfg.poisonDoseLimit;
+  if (poisonDeath) w.push('butcher');
+  if (!poisonDeath && !w.length) {
+    if (mv.evolvedTo && mv.evolvedTo >= cfg.fatnessWin) w.push('cow');
+    else if (alive.length && alive.every(function (q) { return killed[q.cell]; })) w.push('cow');
+    else if (st.round >= st.rounds) w.push('cow');
+  }
+  return w;
+}
+// 這個陣營還有沒有可能贏 (活著的成員; 屠夫要活著才能下毒)
+function canStillWin(st, faction) {
+  return st.players.some(function (q) { return q.faction === faction && !q.dead && !q.echo && !q.leftGame; });
 }
 
 // ================= 評分 (從某陣營的角度) =================
@@ -155,6 +179,15 @@ function scoreFor(faction, st, mv, actorId, rng) {
   // 牛的這一餐
   if (faction === 'butcher' && mv.poisonedThisMeal) s += 250 + 100 * st.cow.doses.length;
   if (mv.evolvedTo) s -= 15;
+  // 這一回合會有人贏嗎: 自己贏大加分; 別的陣營贏大扣分; 已經不可能贏的陣營, 寧可讓牛贏也不讓別人贏
+  if (SPITE) {
+    var win = predictWinners(st, mv);
+    if (win.length) {
+      if (win.indexOf(faction) >= 0) s += 1000;
+      else if (win.indexOf('cow') >= 0 && win.length === 1) s -= canStillWin(st, faction) ? 1000 : 0;
+      else s -= 1000;
+    }
+  }
   return s + rng() * 0.5; // 打破平手
 }
 
@@ -333,9 +366,9 @@ function declareTurnCards(st, p, rng, bot, stats) {
 }
 
 // ================= 一整局 =================
-var COOP = 0, DUMB = [];
+var COOP = 0, DUMB = [], SPITE = true;
 function playGame(o, gi) {
-  COOP = o.coop || 0; DUMB = o.dumb || [];
+  COOP = o.coop || 0; DUMB = o.dumb || []; SPITE = o.spite !== 0;
   var rng = E.mulberry32(o.seed * 100003 + gi * 7919);
   var names = []; for (var i = 0; i < o.players; i++) names.push({ name: 'P' + (i + 1) });
   var st = E.newGame({ players: names, rng: rng, seed: (o.seed * 31 + gi) >>> 0, config: o.set, rounds: o.rounds || undefined });

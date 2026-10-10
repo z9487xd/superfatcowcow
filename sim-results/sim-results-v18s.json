@@ -1,0 +1,1158 @@
+{
+ "games": 400,
+ "date": "2026-10-10T09:23:42.385Z",
+ "results": [
+  {
+   "cfg": {
+    "group": "7人",
+    "name": "7 人 v18 攪局 種子31",
+    "args": [
+     "--players",
+     7,
+     "--seed",
+     31
+    ]
+   },
+   "r": {
+    "games": 400,
+    "win": {
+     "cow": 34,
+     "breeder": 17.3,
+     "butcher": 29.8,
+     "runner": 21.3,
+     "none": 0
+    },
+    "reason": {
+     "rounds": 46,
+     "fat": 10.5,
+     "poison": 29.8,
+     "allEcho": 13.8
+    },
+    "avgRounds": 8.51,
+    "avgFat": 5.51,
+    "avgKills": 4.57,
+    "firstDeath": 2.84,
+    "breederDQ": 0,
+    "avgDoses": 1.78,
+    "poisonLures": 2.61,
+    "transfers": 0.78,
+    "breederWinRound": 7.9,
+    "cowStayRate": 0,
+    "previewMissRate": 0,
+    "queueTieRate": 37.5,
+    "boxLeft": 4.98,
+    "escaped": 0.21,
+    "maxNoise": 34.63,
+    "resetOnlyPerGame": 0,
+    "forfeitsPerGame": {
+     "env": 0.5
+    }
+   },
+   "sec": 298.7
+  },
+  {
+   "cfg": {
+    "group": "7人",
+    "name": "7 人 v18 攪局 種子32",
+    "args": [
+     "--players",
+     7,
+     "--seed",
+     32
+    ]
+   },
+   "r": {
+    "games": 400,
+    "win": {
+     "cow": 35,
+     "breeder": 18.5,
+     "butcher": 28,
+     "runner": 22.8,
+     "none": 0
+    },
+    "reason": {
+     "rounds": 47.8,
+     "fat": 8.3,
+     "poison": 28,
+     "allEcho": 16
+    },
+    "avgRounds": 8.57,
+    "avgFat": 5.48,
+    "avgKills": 4.57,
+    "firstDeath": 2.98,
+    "breederDQ": 0,
+    "avgDoses": 1.75,
+    "poisonLures": 2.54,
+    "transfers": 0.75,
+    "breederWinRound": 7.9,
+    "cowStayRate": 0,
+    "previewMissRate": 0,
+    "queueTieRate": 36.9,
+    "boxLeft": 4.95,
+    "escaped": 0.23,
+    "maxNoise": 34.45,
+    "resetOnlyPerGame": 0,
+    "forfeitsPerGame": {
+     "env": 0.45
+    }
+   },
+   "sec": 306.463
+  },
+  {
+   "cfg": {
+    "group": "7人",
+    "name": "7 人 v18 攪局 種子33",
+    "args": [
+     "--players",
+     7,
+     "--seed",
+     33
+    ]
+   },
+   "r": {
+    "games": 400,
+    "win": {
+     "cow": 35.3,
+     "breeder": 20,
+     "butcher": 24.8,
+     "runner": 24,
+     "none": 0
+    },
+    "reason": {
+     "rounds": 51.3,
+     "fat": 11.3,
+     "poison": 24.8,
+     "allEcho": 12.8
+    },
+    "avgRounds": 8.62,
+    "avgFat": 5.5,
+    "avgKills": 4.52,
+    "firstDeath": 2.89,
+    "breederDQ": 0,
+    "avgDoses": 1.76,
+    "poisonLures": 2.59,
+    "transfers": 0.73,
+    "breederWinRound": 8,
+    "cowStayRate": 0,
+    "previewMissRate": 0,
+    "queueTieRate": 36.6,
+    "boxLeft": 4.64,
+    "escaped": 0.24,
+    "maxNoise": 34.31,
+    "resetOnlyPerGame": 0,
+    "forfeitsPerGame": {
+     "env": 0.53
+    }
+   },
+   "sec": 301.85
+  },
+  {
+   "cfg": {
+    "group": "8人",
+    "name": "8 人 v18 攪局 種子31",
+    "args": [
+     "--players",
+     8,
+     "--seed",
+     31
+    ]
+   },
+   "r": {
+    "games": 400,
+    "win": {
+     "cow": 29.3,
+     "breeder": 25.5,
+     "butcher": 28.8,
+     "runner": 19.8,
+     "none": 0
+    },
+    "reason": {
+     "rounds": 50.7,
+     "fat": 11.5,
+     "poison": 28.8,
+     "allEcho": 9
+    },
+    "avgRounds": 8.69,
+    "avgFat": 5.58,
+    "avgKills": 5.19,
+    "firstDeath": 2.9,
+    "breederDQ": 0,
+    "avgDoses": 1.68,
+    "poisonLures": 2.47,
+    "transfers": 1.12,
+    "breederWinRound": 7.4,
+    "cowStayRate": 0,
+    "previewMissRate": 0,
+    "queueTieRate": 41.6,
+    "boxLeft": 3.37,
+    "escaped": 0.2,
+    "maxNoise": 38.2,
+    "resetOnlyPerGame": 0,
+    "forfeitsPerGame": {
+     "env": 0.61
+    }
+   },
+   "sec": 356.321
+  },
+  {
+   "cfg": {
+    "group": "8人",
+    "name": "8 人 v18 攪局 種子32",
+    "args": [
+     "--players",
+     8,
+     "--seed",
+     32
+    ]
+   },
+   "r": {
+    "games": 400,
+    "win": {
+     "cow": 30.3,
+     "breeder": 22,
+     "butcher": 28,
+     "runner": 22.8,
+     "none": 0
+    },
+    "reason": {
+     "rounds": 51.3,
+     "fat": 10.8,
+     "poison": 28,
+     "allEcho": 10
+    },
+    "avgRounds": 8.62,
+    "avgFat": 5.49,
+    "avgKills": 5.09,
+    "firstDeath": 2.95,
+    "breederDQ": 0,
+    "avgDoses": 1.67,
+    "poisonLures": 2.49,
+    "transfers": 1.09,
+    "breederWinRound": 7.5,
+    "cowStayRate": 0,
+    "previewMissRate": 0,
+    "queueTieRate": 41.5,
+    "boxLeft": 3.31,
+    "escaped": 0.23,
+    "maxNoise": 38.8,
+    "resetOnlyPerGame": 0,
+    "forfeitsPerGame": {
+     "env": 0.59
+    }
+   },
+   "sec": 367.713
+  },
+  {
+   "cfg": {
+    "group": "8人",
+    "name": "8 人 v18 攪局 種子33",
+    "args": [
+     "--players",
+     8,
+     "--seed",
+     33
+    ]
+   },
+   "r": {
+    "games": 400,
+    "win": {
+     "cow": 30.8,
+     "breeder": 22.8,
+     "butcher": 28.5,
+     "runner": 21.5,
+     "none": 0
+    },
+    "reason": {
+     "rounds": 49.5,
+     "fat": 10.5,
+     "poison": 28.5,
+     "allEcho": 11.5
+    },
+    "avgRounds": 8.57,
+    "avgFat": 5.51,
+    "avgKills": 5.15,
+    "firstDeath": 2.85,
+    "breederDQ": 0,
+    "avgDoses": 1.69,
+    "poisonLures": 2.51,
+    "transfers": 1.17,
+    "breederWinRound": 7.7,
+    "cowStayRate": 0,
+    "previewMissRate": 0,
+    "queueTieRate": 41.7,
+    "boxLeft": 3.16,
+    "escaped": 0.22,
+    "maxNoise": 38.01,
+    "resetOnlyPerGame": 0,
+    "forfeitsPerGame": {
+     "env": 0.58
+    }
+   },
+   "sec": 357.83
+  },
+  {
+   "cfg": {
+    "group": "9人",
+    "name": "9 人 v18 攪局 種子31",
+    "args": [
+     "--players",
+     9,
+     "--seed",
+     31
+    ]
+   },
+   "r": {
+    "games": 400,
+    "win": {
+     "cow": 29,
+     "breeder": 31.8,
+     "butcher": 25.5,
+     "runner": 19,
+     "none": 0
+    },
+    "reason": {
+     "rounds": 51,
+     "fat": 10.8,
+     "poison": 25.5,
+     "allEcho": 12.8
+    },
+    "avgRounds": 8.4,
+    "avgFat": 5.43,
+    "avgKills": 5.89,
+    "firstDeath": 2.75,
+    "breederDQ": 0,
+    "avgDoses": 1.67,
+    "poisonLures": 2.39,
+    "transfers": 1.5,
+    "breederWinRound": 7.3,
+    "cowStayRate": 0,
+    "previewMissRate": 0,
+    "queueTieRate": 45.6,
+    "boxLeft": 2.47,
+    "escaped": 0.19,
+    "maxNoise": 40.96,
+    "resetOnlyPerGame": 0,
+    "forfeitsPerGame": {
+     "env": 0.59
+    }
+   },
+   "sec": 399.011
+  },
+  {
+   "cfg": {
+    "group": "9人",
+    "name": "9 人 v18 攪局 種子32",
+    "args": [
+     "--players",
+     9,
+     "--seed",
+     32
+    ]
+   },
+   "r": {
+    "games": 400,
+    "win": {
+     "cow": 29,
+     "breeder": 29.8,
+     "butcher": 23,
+     "runner": 22.8,
+     "none": 0
+    },
+    "reason": {
+     "rounds": 55.3,
+     "fat": 10.8,
+     "poison": 23,
+     "allEcho": 11
+    },
+    "avgRounds": 8.43,
+    "avgFat": 5.4,
+    "avgKills": 5.77,
+    "firstDeath": 2.92,
+    "breederDQ": 0,
+    "avgDoses": 1.6,
+    "poisonLures": 2.39,
+    "transfers": 1.58,
+    "breederWinRound": 7.6,
+    "cowStayRate": 0,
+    "previewMissRate": 0,
+    "queueTieRate": 45.1,
+    "boxLeft": 2.46,
+    "escaped": 0.23,
+    "maxNoise": 42.35,
+    "resetOnlyPerGame": 0,
+    "forfeitsPerGame": {
+     "env": 0.67
+    }
+   },
+   "sec": 407.926
+  },
+  {
+   "cfg": {
+    "group": "9人",
+    "name": "9 人 v18 攪局 種子33",
+    "args": [
+     "--players",
+     9,
+     "--seed",
+     33
+    ]
+   },
+   "r": {
+    "games": 400,
+    "win": {
+     "cow": 29.5,
+     "breeder": 31.8,
+     "butcher": 22.3,
+     "runner": 21.8,
+     "none": 0
+    },
+    "reason": {
+     "rounds": 58.5,
+     "fat": 11.5,
+     "poison": 22.3,
+     "allEcho": 7.8
+    },
+    "avgRounds": 8.56,
+    "avgFat": 5.39,
+    "avgKills": 5.79,
+    "firstDeath": 2.83,
+    "breederDQ": 0,
+    "avgDoses": 1.57,
+    "poisonLures": 2.32,
+    "transfers": 1.59,
+    "breederWinRound": 7.7,
+    "cowStayRate": 0,
+    "previewMissRate": 0,
+    "queueTieRate": 44.6,
+    "boxLeft": 2.45,
+    "escaped": 0.22,
+    "maxNoise": 41.45,
+    "resetOnlyPerGame": 0,
+    "forfeitsPerGame": {
+     "env": 0.68
+    }
+   },
+   "sec": 416.26
+  },
+  {
+   "cfg": {
+    "group": "10人",
+    "name": "10 人 v18 攪局 種子31",
+    "args": [
+     "--players",
+     10,
+     "--seed",
+     31
+    ]
+   },
+   "r": {
+    "games": 400,
+    "win": {
+     "cow": 32,
+     "breeder": 19.8,
+     "butcher": 25.5,
+     "runner": 25,
+     "none": 0
+    },
+    "reason": {
+     "rounds": 54.3,
+     "fat": 12.5,
+     "poison": 25.5,
+     "allEcho": 7.8
+    },
+    "avgRounds": 8.56,
+    "avgFat": 5.57,
+    "avgKills": 6.28,
+    "firstDeath": 2.67,
+    "breederDQ": 0,
+    "avgDoses": 1.98,
+    "poisonLures": 2.88,
+    "transfers": 1.62,
+    "breederWinRound": 7.6,
+    "cowStayRate": 0,
+    "previewMissRate": 0,
+    "queueTieRate": 48.1,
+    "boxLeft": 2.63,
+    "escaped": 0.25,
+    "maxNoise": 43.48,
+    "resetOnlyPerGame": 0,
+    "forfeitsPerGame": {
+     "env": 0.76
+    }
+   },
+   "sec": 481.107
+  },
+  {
+   "cfg": {
+    "group": "10人",
+    "name": "10 人 v18 攪局 種子32",
+    "args": [
+     "--players",
+     10,
+     "--seed",
+     32
+    ]
+   },
+   "r": {
+    "games": 400,
+    "win": {
+     "cow": 29,
+     "breeder": 28,
+     "butcher": 24.5,
+     "runner": 22.8,
+     "none": 0
+    },
+    "reason": {
+     "rounds": 56.3,
+     "fat": 12.5,
+     "poison": 24.5,
+     "allEcho": 6.8
+    },
+    "avgRounds": 8.49,
+    "avgFat": 5.53,
+    "avgKills": 6.21,
+    "firstDeath": 2.91,
+    "breederDQ": 0,
+    "avgDoses": 2.06,
+    "poisonLures": 3.1,
+    "transfers": 1.64,
+    "breederWinRound": 7.4,
+    "cowStayRate": 0,
+    "previewMissRate": 0,
+    "queueTieRate": 47.5,
+    "boxLeft": 2.12,
+    "escaped": 0.23,
+    "maxNoise": 43.66,
+    "resetOnlyPerGame": 0.01,
+    "forfeitsPerGame": {
+     "env": 0.7
+    }
+   },
+   "sec": 486.009
+  },
+  {
+   "cfg": {
+    "group": "10人",
+    "name": "10 人 v18 攪局 種子33",
+    "args": [
+     "--players",
+     10,
+     "--seed",
+     33
+    ]
+   },
+   "r": {
+    "games": 400,
+    "win": {
+     "cow": 29.3,
+     "breeder": 21.5,
+     "butcher": 18.8,
+     "runner": 31.8,
+     "none": 0
+    },
+    "reason": {
+     "rounds": 61.3,
+     "fat": 14.5,
+     "poison": 18.8,
+     "allEcho": 5.5
+    },
+    "avgRounds": 8.38,
+    "avgFat": 5.25,
+    "avgKills": 5.94,
+    "firstDeath": 2.78,
+    "breederDQ": 0,
+    "avgDoses": 1.78,
+    "poisonLures": 2.73,
+    "transfers": 1.66,
+    "breederWinRound": 7.7,
+    "cowStayRate": 0,
+    "previewMissRate": 0,
+    "queueTieRate": 47.6,
+    "boxLeft": 2.21,
+    "escaped": 0.32,
+    "maxNoise": 42.6,
+    "resetOnlyPerGame": 0,
+    "forfeitsPerGame": {
+     "env": 0.79
+    }
+   },
+   "sec": 474.542
+  },
+  {
+   "cfg": {
+    "group": "11人",
+    "name": "11 人 v18 攪局 種子31",
+    "args": [
+     "--players",
+     11,
+     "--seed",
+     31
+    ]
+   },
+   "r": {
+    "games": 400,
+    "win": {
+     "cow": 27.8,
+     "breeder": 20.5,
+     "butcher": 26.8,
+     "runner": 26.3,
+     "none": 0
+    },
+    "reason": {
+     "rounds": 59.5,
+     "fat": 10.3,
+     "poison": 26.8,
+     "allEcho": 3.5
+    },
+    "avgRounds": 8.78,
+    "avgFat": 5.46,
+    "avgKills": 6.34,
+    "firstDeath": 2.82,
+    "breederDQ": 0,
+    "avgDoses": 1.78,
+    "poisonLures": 2.89,
+    "transfers": 1.83,
+    "breederWinRound": 8,
+    "cowStayRate": 0,
+    "previewMissRate": 0,
+    "queueTieRate": 44,
+    "boxLeft": 5.59,
+    "escaped": 0.26,
+    "maxNoise": 39.12,
+    "resetOnlyPerGame": 0,
+    "forfeitsPerGame": {
+     "env": 0.57
+    }
+   },
+   "sec": 672.393
+  },
+  {
+   "cfg": {
+    "group": "11人",
+    "name": "11 人 v18 攪局 種子32",
+    "args": [
+     "--players",
+     11,
+     "--seed",
+     32
+    ]
+   },
+   "r": {
+    "games": 400,
+    "win": {
+     "cow": 30.8,
+     "breeder": 25,
+     "butcher": 24.3,
+     "runner": 22.5,
+     "none": 0
+    },
+    "reason": {
+     "rounds": 59,
+     "fat": 13.3,
+     "poison": 24.3,
+     "allEcho": 3.5
+    },
+    "avgRounds": 8.95,
+    "avgFat": 5.64,
+    "avgKills": 6.65,
+    "firstDeath": 2.64,
+    "breederDQ": 0,
+    "avgDoses": 1.8,
+    "poisonLures": 2.81,
+    "transfers": 1.89,
+    "breederWinRound": 8.1,
+    "cowStayRate": 0,
+    "previewMissRate": 0,
+    "queueTieRate": 44.1,
+    "boxLeft": 5.65,
+    "escaped": 0.23,
+    "maxNoise": 39.34,
+    "resetOnlyPerGame": 0,
+    "forfeitsPerGame": {
+     "env": 0.56
+    }
+   },
+   "sec": 679.446
+  },
+  {
+   "cfg": {
+    "group": "11人",
+    "name": "11 人 v18 攪局 種子33",
+    "args": [
+     "--players",
+     11,
+     "--seed",
+     33
+    ]
+   },
+   "r": {
+    "games": 400,
+    "win": {
+     "cow": 28.3,
+     "breeder": 23.5,
+     "butcher": 23.3,
+     "runner": 26.5,
+     "none": 0
+    },
+    "reason": {
+     "rounds": 61.5,
+     "fat": 12.5,
+     "poison": 23.3,
+     "allEcho": 2.8
+    },
+    "avgRounds": 8.85,
+    "avgFat": 5.49,
+    "avgKills": 6.54,
+    "firstDeath": 2.74,
+    "breederDQ": 0,
+    "avgDoses": 1.74,
+    "poisonLures": 2.77,
+    "transfers": 2.05,
+    "breederWinRound": 8.1,
+    "cowStayRate": 0,
+    "previewMissRate": 0,
+    "queueTieRate": 44.2,
+    "boxLeft": 5.69,
+    "escaped": 0.27,
+    "maxNoise": 39.57,
+    "resetOnlyPerGame": 0,
+    "forfeitsPerGame": {
+     "env": 0.6
+    }
+   },
+   "sec": 670.575
+  },
+  {
+   "cfg": {
+    "group": "12人",
+    "name": "12 人 v18 攪局 種子31",
+    "args": [
+     "--players",
+     12,
+     "--seed",
+     31
+    ]
+   },
+   "r": {
+    "games": 400,
+    "win": {
+     "cow": 25.8,
+     "breeder": 30.3,
+     "butcher": 22,
+     "runner": 23.8,
+     "none": 0
+    },
+    "reason": {
+     "rounds": 61,
+     "fat": 14.5,
+     "poison": 22,
+     "allEcho": 2.5
+    },
+    "avgRounds": 8.72,
+    "avgFat": 5.46,
+    "avgKills": 6.91,
+    "firstDeath": 2.65,
+    "breederDQ": 0,
+    "avgDoses": 1.7,
+    "poisonLures": 2.69,
+    "transfers": 2.35,
+    "breederWinRound": 7.9,
+    "cowStayRate": 0,
+    "previewMissRate": 0,
+    "queueTieRate": 46.7,
+    "boxLeft": 4.97,
+    "escaped": 0.24,
+    "maxNoise": 41.28,
+    "resetOnlyPerGame": 0,
+    "forfeitsPerGame": {
+     "env": 0.57
+    }
+   },
+   "sec": 604.68
+  },
+  {
+   "cfg": {
+    "group": "12人",
+    "name": "12 人 v18 攪局 種子32",
+    "args": [
+     "--players",
+     12,
+     "--seed",
+     32
+    ]
+   },
+   "r": {
+    "games": 400,
+    "win": {
+     "cow": 26.3,
+     "breeder": 26.3,
+     "butcher": 19.8,
+     "runner": 30.5,
+     "none": 0
+    },
+    "reason": {
+     "rounds": 63.8,
+     "fat": 13,
+     "poison": 19.8,
+     "allEcho": 3.5
+    },
+    "avgRounds": 8.66,
+    "avgFat": 5.36,
+    "avgKills": 6.87,
+    "firstDeath": 2.57,
+    "breederDQ": 0,
+    "avgDoses": 1.66,
+    "poisonLures": 2.73,
+    "transfers": 2.26,
+    "breederWinRound": 8,
+    "cowStayRate": 0,
+    "previewMissRate": 0,
+    "queueTieRate": 47.2,
+    "boxLeft": 4.64,
+    "escaped": 0.31,
+    "maxNoise": 41.08,
+    "resetOnlyPerGame": 0,
+    "forfeitsPerGame": {
+     "env": 0.55
+    }
+   },
+   "sec": 602.585
+  },
+  {
+   "cfg": {
+    "group": "12人",
+    "name": "12 人 v18 攪局 種子33",
+    "args": [
+     "--players",
+     12,
+     "--seed",
+     33
+    ]
+   },
+   "r": {
+    "games": 400,
+    "win": {
+     "cow": 27.8,
+     "breeder": 23.8,
+     "butcher": 20.8,
+     "runner": 29.5,
+     "none": 0
+    },
+    "reason": {
+     "rounds": 62,
+     "fat": 14,
+     "poison": 20.8,
+     "allEcho": 3.3
+    },
+    "avgRounds": 8.64,
+    "avgFat": 5.37,
+    "avgKills": 6.95,
+    "firstDeath": 2.61,
+    "breederDQ": 0,
+    "avgDoses": 1.75,
+    "poisonLures": 2.79,
+    "transfers": 2.32,
+    "breederWinRound": 8,
+    "cowStayRate": 0,
+    "previewMissRate": 0,
+    "queueTieRate": 46.6,
+    "boxLeft": 5.18,
+    "escaped": 0.3,
+    "maxNoise": 41.58,
+    "resetOnlyPerGame": 0,
+    "forfeitsPerGame": {
+     "env": 0.56
+    }
+   },
+   "sec": 592.795
+  },
+  {
+   "cfg": {
+    "group": "13人",
+    "name": "13 人 v18 攪局 種子31",
+    "args": [
+     "--players",
+     13,
+     "--seed",
+     31
+    ]
+   },
+   "r": {
+    "games": 400,
+    "win": {
+     "cow": 29.8,
+     "breeder": 26,
+     "butcher": 23.3,
+     "runner": 23.8,
+     "none": 0
+    },
+    "reason": {
+     "rounds": 61.5,
+     "fat": 12.8,
+     "poison": 23.3,
+     "allEcho": 2.5
+    },
+    "avgRounds": 8.84,
+    "avgFat": 5.67,
+    "avgKills": 7.48,
+    "firstDeath": 2.62,
+    "breederDQ": 0,
+    "avgDoses": 2.07,
+    "poisonLures": 3.34,
+    "transfers": 2.46,
+    "breederWinRound": 8,
+    "cowStayRate": 0,
+    "previewMissRate": 0,
+    "queueTieRate": 48.8,
+    "boxLeft": 4.15,
+    "escaped": 0.24,
+    "maxNoise": 43.54,
+    "resetOnlyPerGame": 0,
+    "forfeitsPerGame": {
+     "env": 0.59
+    }
+   },
+   "sec": 632.731
+  },
+  {
+   "cfg": {
+    "group": "13人",
+    "name": "13 人 v18 攪局 種子32",
+    "args": [
+     "--players",
+     13,
+     "--seed",
+     32
+    ]
+   },
+   "r": {
+    "games": 400,
+    "win": {
+     "cow": 31,
+     "breeder": 29.5,
+     "butcher": 21,
+     "runner": 22,
+     "none": 0
+    },
+    "reason": {
+     "rounds": 62.5,
+     "fat": 14.5,
+     "poison": 21,
+     "allEcho": 2
+    },
+    "avgRounds": 8.93,
+    "avgFat": 5.6,
+    "avgKills": 7.5,
+    "firstDeath": 2.55,
+    "breederDQ": 0,
+    "avgDoses": 1.98,
+    "poisonLures": 3.16,
+    "transfers": 2.55,
+    "breederWinRound": 8.2,
+    "cowStayRate": 0,
+    "previewMissRate": 0,
+    "queueTieRate": 49.2,
+    "boxLeft": 4.26,
+    "escaped": 0.22,
+    "maxNoise": 44.15,
+    "resetOnlyPerGame": 0,
+    "forfeitsPerGame": {
+     "env": 0.59
+    }
+   },
+   "sec": 630.579
+  },
+  {
+   "cfg": {
+    "group": "13人",
+    "name": "13 人 v18 攪局 種子33",
+    "args": [
+     "--players",
+     13,
+     "--seed",
+     33
+    ]
+   },
+   "r": {
+    "games": 400,
+    "win": {
+     "cow": 29,
+     "breeder": 24.5,
+     "butcher": 27.3,
+     "runner": 21.8,
+     "none": 0
+    },
+    "reason": {
+     "rounds": 57,
+     "fat": 13.5,
+     "poison": 27.3,
+     "allEcho": 2.3
+    },
+    "avgRounds": 8.75,
+    "avgFat": 5.65,
+    "avgKills": 7.37,
+    "firstDeath": 2.56,
+    "breederDQ": 0,
+    "avgDoses": 2.09,
+    "poisonLures": 3.22,
+    "transfers": 2.53,
+    "breederWinRound": 7.9,
+    "cowStayRate": 0,
+    "previewMissRate": 0,
+    "queueTieRate": 48.6,
+    "boxLeft": 4.32,
+    "escaped": 0.22,
+    "maxNoise": 43.21,
+    "resetOnlyPerGame": 0,
+    "forfeitsPerGame": {
+     "env": 0.56
+    }
+   },
+   "sec": 624.064
+  },
+  {
+   "cfg": {
+    "group": "14人",
+    "name": "14 人 v18 攪局 種子31",
+    "args": [
+     "--players",
+     14,
+     "--seed",
+     31
+    ]
+   },
+   "r": {
+    "games": 400,
+    "win": {
+     "cow": 24.3,
+     "breeder": 21.8,
+     "butcher": 26.8,
+     "runner": 28,
+     "none": 0
+    },
+    "reason": {
+     "rounds": 61,
+     "fat": 11,
+     "poison": 26.8,
+     "allEcho": 1.3
+    },
+    "avgRounds": 8.52,
+    "avgFat": 5.31,
+    "avgKills": 7.56,
+    "firstDeath": 2.49,
+    "breederDQ": 0,
+    "avgDoses": 1.94,
+    "poisonLures": 3.15,
+    "transfers": 2.79,
+    "breederWinRound": 7.6,
+    "cowStayRate": 0,
+    "previewMissRate": 0,
+    "queueTieRate": 51.3,
+    "boxLeft": 3.56,
+    "escaped": 0.28,
+    "maxNoise": 45.21,
+    "resetOnlyPerGame": 0,
+    "forfeitsPerGame": {
+     "env": 0.69
+    }
+   },
+   "sec": 625.632
+  },
+  {
+   "cfg": {
+    "group": "14人",
+    "name": "14 人 v18 攪局 種子32",
+    "args": [
+     "--players",
+     14,
+     "--seed",
+     32
+    ]
+   },
+   "r": {
+    "games": 400,
+    "win": {
+     "cow": 22.3,
+     "breeder": 22,
+     "butcher": 25,
+     "runner": 31.8,
+     "none": 0
+    },
+    "reason": {
+     "rounds": 63,
+     "fat": 11.3,
+     "poison": 25,
+     "allEcho": 0.8
+    },
+    "avgRounds": 8.29,
+    "avgFat": 5.15,
+    "avgKills": 7.58,
+    "firstDeath": 2.5,
+    "breederDQ": 0,
+    "avgDoses": 1.88,
+    "poisonLures": 2.97,
+    "transfers": 2.84,
+    "breederWinRound": 7.7,
+    "cowStayRate": 0,
+    "previewMissRate": 0,
+    "queueTieRate": 51.1,
+    "boxLeft": 3.47,
+    "escaped": 0.32,
+    "maxNoise": 45.06,
+    "resetOnlyPerGame": 0.01,
+    "forfeitsPerGame": {
+     "env": 0.59
+    }
+   },
+   "sec": 614.918
+  },
+  {
+   "cfg": {
+    "group": "14人",
+    "name": "14 人 v18 攪局 種子33",
+    "args": [
+     "--players",
+     14,
+     "--seed",
+     33
+    ]
+   },
+   "r": {
+    "games": 400,
+    "win": {
+     "cow": 20,
+     "breeder": 23,
+     "butcher": 29.8,
+     "runner": 29.5,
+     "none": 0
+    },
+    "reason": {
+     "rounds": 60.5,
+     "fat": 9.3,
+     "poison": 29.8,
+     "allEcho": 0.5
+    },
+    "avgRounds": 8.33,
+    "avgFat": 5.24,
+    "avgKills": 7.43,
+    "firstDeath": 2.57,
+    "breederDQ": 0,
+    "avgDoses": 1.96,
+    "poisonLures": 3.13,
+    "transfers": 2.81,
+    "breederWinRound": 8,
+    "cowStayRate": 0,
+    "previewMissRate": 0,
+    "queueTieRate": 50.8,
+    "boxLeft": 3.56,
+    "escaped": 0.3,
+    "maxNoise": 43.72,
+    "resetOnlyPerGame": 0,
+    "forfeitsPerGame": {
+     "env": 0.67
+    }
+   },
+   "sec": 601.678
+  }
+ ]
+}

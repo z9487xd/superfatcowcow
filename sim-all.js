@@ -639,6 +639,12 @@ if (process.argv[3] === 'v18') {
   [7, 8, 9, 10, 11, 12, 13, 14].forEach(function (n) { [31, 32, 33].forEach(function (seed) { CONFIGS.push({ group: n + '人', name: n + ' 人 v18 種子' + seed, args: ['--players', n, '--seed', seed] }); }); });
 }
 
+// v18 + 電腦玩家會阻止別人贏 (輸家攪局)  node sim-all.js 400 v18s
+if (process.argv[3] === 'v18s') {
+  CONFIGS = [];
+  [7, 8, 9, 10, 11, 12, 13, 14].forEach(function (n) { [31, 32, 33].forEach(function (seed) { CONFIGS.push({ group: n + '人', name: n + ' 人 v18 攪局 種子' + seed, args: ['--players', n, '--seed', seed] }); }); });
+}
+
 function run(cfg) {
   return new Promise(function (resolve) {
     var args = [__dirname + '/sim.js', '--games', GAMES, '--json'].concat(cfg.args).map(String);
