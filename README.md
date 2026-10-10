@@ -6,9 +6,9 @@
 - 狀態存記憶體，每次動作自動存一份到 `localStorage`，筆電當掉可還原。
 - 為投影設計：深色底、高對比、大字。
 
-依最初的建置需求與規則書 v6 實作，並經模擬測試修正為 **規則 v18**。
+依最初的建置需求與規則書 v6 實作，並經模擬測試修正為 **規則 v19**。
 
-- **玩家看的規則：`說明書.md`**（v18，現行預設）
+- **玩家看的規則：`說明書.md`**（v19，現行預設）
 - **模擬測試數據：`平衡測試報告.md`**（約 5 萬場電腦對局、規則演變）
 - **待辦與改進想法：`設計改進方案.md`**（還沒實作）
 
@@ -134,14 +134,14 @@ node sim-all.js 400 v18            # 現行規則各人數驗證
 ### 8. 牌沒有合法目標時「作廢」
 實測發現約 4% 的格子上環境卡**每一面牆都動不了**（拆不到、築了會封死或切斷地圖），規則只說「重選」，但根本沒得選 → 整場卡死。宣告時每張牌都有「✖ 作廢這張牌」：牌照樣消耗、**無效果、不產生噪點**，回合繼續。中途走出出口的人，剩下的牌自動跳過。
 
-### 9. 規則演變（v7–v18）
-模擬測試後陸續修正，現行是 v18（各版改了什麼見 `平衡測試報告.md` 第三節）。程式上的重點：
+### 9. 規則演變（v7–v19）
+模擬測試後陸續修正，現行是 v19（各版改了什麼見 `平衡測試報告.md` 第三節）。程式上的重點：
 - `config.js`：`FACTION_TABLE` 陣營人數（每多一人依序加給屠夫→逃亡者→飼養者）；`tableFor()` 裡的 `V13` 表依人數設定逃亡者／飼養者門檻、毒效、每箱樣本、毒死劑數；11–14 人牛步數 = 肥度 + 2。
 - `firstWinEnds: 1`：任一陣營達成就結束（牛的同一次行動中達成的陣營一起贏）。
 - `timeoutCowWins: 1`：第 12 回合結束沒人達成 → 牛贏。
 - `teamTransfer: 1`：所有陣營都能把任意數量的樣本交給同房、同陣營的隊友（`engine.js` 的 `giveSamples`、`canTransfer`）。
 - `dropAllowed: 1`：可以把樣本丟在地上，任何人用互動卡撿（`dropSamples`）。
-- 毒死優先（`state.cow.dead`）；只有逃亡者能從出口離開（`tryLeaveViaExit`）；只有屠夫能下毒（`declareLure`）；消音器清自己和四鄰格（`silencerRadius`）；回聲器複製後原房間砍半（`echoHalveSource`）；毒只維持一回合（`poisonOneRound`）；樣本箱至少離牛 2 步（`boxMinDist`）；牛連續沒吃到的回合數加到步數（`cowHungerStep`，v18；下毒加成 `poisonBonus` 改回 0）；第 1 回合出口至少離樣本箱 3 步（`exitBoxMinDist`、`exitBoxFirstOnly`）；殘響的手牌是移動／誘導／互動，互動只能操作回聲器，用過任兩張全部收回（`ECHO_CARDS`）。
+- 毒死優先（`state.cow.dead`）；只有逃亡者能從出口離開（`tryLeaveViaExit`）；只有屠夫能下毒（`declareLure`）；消音器清自己和四鄰格（`silencerRadius`）；回聲器複製後原房間砍半（`echoHalveSource`）；毒只維持一回合（`poisonOneRound`）；樣本箱至少離牛 2 步（`boxMinDist`）；牛連續沒吃到的回合數加到步數（`cowHungerStep`，v18；下毒加成 `poisonBonus` 改回 0）；第 1 回合出口至少離樣本箱 3 步（`exitBoxMinDist`、`exitBoxFirstOnly`）；牛出發時自己那一格也會輾人（`cowStartKills`，v19）；殘響的手牌是移動／誘導／互動，互動只能操作回聲器，用過任兩張全部收回（`ECHO_CARDS`）。
 - 測試用開關（預設關閉）：`breederTransfer: 1`、`breederWinAny: 0/2`、`cowLateBonus`；設成 0 可回到舊規則的開關：`firstWinEnds`、`timeoutCowWins`。
 
 ### 未實作（規則書標為「待實測」或需要現場人判斷的變體）

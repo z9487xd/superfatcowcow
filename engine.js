@@ -767,9 +767,9 @@
 
   // 共用: 依 path 計算殺人格/波及格, 及 (可選) 進食進化中毒
   function finishKillsAndEat(state, result, path, fatness, cfg, allowEat) {
-    // 4. 殺人: 路徑經過每格加終點, 起點不算
+    // 4. 殺人: 路徑經過每格加終點; 起點只有 cowStartKills 且牛真的有移動時才算 (v19)
     var killSet = {};
-    for (var i = 1; i < path.length; i++) killSet[path[i]] = true;
+    for (var i = (cfg.cowStartKills && path.length > 1) ? 0 : 1; i < path.length; i++) killSet[path[i]] = true;
     // 肥度 >= splash: 路徑每格四方相鄰也殺 (不含起點, 波及不撞牆)
     if (fatness >= cfg.fatnessSplash) {
       for (var j = 1; j < path.length; j++) {

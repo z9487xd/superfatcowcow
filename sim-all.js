@@ -645,6 +645,12 @@ if (process.argv[3] === 'v18s') {
   [7, 8, 9, 10, 11, 12, 13, 14].forEach(function (n) { [31, 32, 33].forEach(function (seed) { CONFIGS.push({ group: n + '人', name: n + ' 人 v18 攪局 種子' + seed, args: ['--players', n, '--seed', seed] }); }); });
 }
 
+// v19: 牛那一格也會被輾 (cowStartKills = 1), 其餘同 v18 攪局  node sim-all.js 400 v19
+if (process.argv[3] === 'v19') {
+  CONFIGS = [];
+  [7, 8, 9, 10, 11, 12, 13, 14].forEach(function (n) { [31, 32, 33].forEach(function (seed) { CONFIGS.push({ group: n + '人', name: n + ' 人 v19 種子' + seed, args: ['--players', n, '--seed', seed] }); }); });
+}
+
 function run(cfg) {
   return new Promise(function (resolve) {
     var args = [__dirname + '/sim.js', '--games', GAMES, '--json'].concat(cfg.args).map(String);
