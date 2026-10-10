@@ -695,7 +695,7 @@
       hint.textContent = '點綠色範圍內一格製造噪點 (3 格內，可點自己)。';
       if (!actor.echo && actor.faction === 'butcher' && actor.samples > 0) {
         var lbl = document.createElement('label'); lbl.className = 'check';
-        lbl.innerHTML = '<input type="checkbox" id="poisonChk"> ☣ 投入 1 樣本下毒';
+        lbl.innerHTML = '<input type="checkbox" id="poisonChk"> ☣ 投入 1 樣本下毒 (目標 +' + (G.state.config.lureTargetNoise + (G.state.config.poisonBonus || 0)) + ')';
         body.appendChild(lbl);
         $('poisonChk').checked = dec.poison;
         $('poisonChk').onchange = function () { dec.poison = this.checked; };
@@ -1093,7 +1093,7 @@
   var PARAM_FIELDS = [
     ['rounds', '回合總數'], ['breederSampleThreshold', '飼養者樣本門檻'], ['breederWinAny', '飼養者: 任一人帶滿死亡即勝 (1=是, 0=全體)'], ['teamTransfer', '同陣營交付 (1=可, 0=不可)'], ['dropAllowed', '可以丟樣本在地上 (1=可, 0=不可)'], ['runnerSampleThreshold', '逃亡者樣本門檻'],
     ['poisonDoseLimit', '毒劑門檻'], ['poisonDuration', '毒效期(回合)'], ['boxSize', '每箱樣本'], ['boxTake', '每次取樣'],
-    ['moveNoise', '移動噪點'], ['envNoise', '環境噪點'], ['interactNoise', '互動噪點'], ['lureTargetNoise', '誘導目標噪點'],
+    ['moveNoise', '移動噪點'], ['envNoise', '環境噪點'], ['interactNoise', '互動噪點'], ['lureTargetNoise', '誘導目標噪點'], ['poisonBonus', '下毒額外噪點'],
     ['lureSelfNoise', '誘導自身噪點'], ['resetNoise', '重製噪點'], ['carryNoisePerSample', '攜帶噪點/樣本'],
     ['corpseNoise', '屍體噪點'], ['decoyNoise', '誘餌槽噪點'], ['fatnessSmash', '撞牆門檻'], ['fatnessSplash', '波及門檻'],
     ['fatnessWin', '牛勝肥度'], ['cowMoveBonus', '牛移動加成(肥度+N)']

@@ -509,6 +509,62 @@ if (process.argv[3] === 'v16') {
   [7, 8, 9, 10, 11, 12, 13, 14].forEach(function (n) { CONFIGS.push({ group: 'v16', name: n + ' 人 v16 預設', args: ['--players', n, '--seed', 3] }); });
 }
 
+// 8–9 人改回 3 劑 + 下毒加成  node sim-all.js 300 v17a
+if (process.argv[3] === 'v17a') {
+  CONFIGS = [];
+  function addR(n, name, sets) { [1, 2, 3].forEach(function (seed) { var a = ['--players', n, '--seed', seed]; sets.forEach(function (kv) { a.push('--set', kv); }); CONFIGS.push({ group: n + '人', name: n + ' 人 ' + name + ' 種子' + seed, args: a }); }); }
+  [8, 9].forEach(function (n) {
+    addR(n, '3劑', []);
+    addR(n, '3劑 下毒+2', ['poisonBonus=2']);
+    addR(n, '3劑 下毒+3', ['poisonBonus=3']);
+  });
+}
+
+// 全人數 下毒 +3  node sim-all.js 300 v17b
+if (process.argv[3] === 'v17b') {
+  CONFIGS = [];
+  [7, 8, 9, 10, 11, 12, 13, 14].forEach(function (n) { [1, 2].forEach(function (seed) { CONFIGS.push({ group: n + '人', name: n + ' 人 下毒+3 種子' + seed, args: ['--players', n, '--seed', seed, '--set', 'poisonBonus=3'] }); }); });
+}
+
+// 大樣本確認: 新種子 4/5/6 各 400 場, 沒加成 vs 下毒 +3  node sim-all.js 400 v17c
+if (process.argv[3] === 'v17c') {
+  CONFIGS = [];
+  [7, 8, 9, 10, 11, 12, 13, 14].forEach(function (n) {
+    [4, 5, 6].forEach(function (seed) {
+      CONFIGS.push({ group: n + '人', name: n + ' 人 沒加成 種子' + seed, args: ['--players', n, '--seed', seed] });
+      CONFIGS.push({ group: n + '人', name: n + ' 人 下毒+3 種子' + seed, args: ['--players', n, '--seed', seed, '--set', 'poisonBonus=3'] });
+    });
+  });
+}
+
+// 下毒 +3 之後修 8、13 人  node sim-all.js 400 v17d
+if (process.argv[3] === 'v17d') {
+  CONFIGS = [];
+  function addS(n, name, sets) { [7, 8].forEach(function (seed) { var a = ['--players', n, '--seed', seed, '--set', 'poisonBonus=3']; sets.forEach(function (kv) { a.push('--set', kv); }); CONFIGS.push({ group: n + '人', name: n + ' 人 ' + name + ' 種子' + seed, args: a }); }); }
+  addS(8, '逃6', ['runnerSampleThreshold=6']);
+  addS(8, '毒效12', ['poisonDuration=12']);
+  addS(13, '飼8', ['breederSampleThreshold=8']);
+  addS(13, '飼8 毒效4', ['breederSampleThreshold=8', 'poisonDuration=4']);
+}
+
+// v17 最終驗證: 新種子 9/10/11 各 400 場  node sim-all.js 400 v17
+if (process.argv[3] === 'v17') {
+  CONFIGS = [];
+  [7, 8, 9, 10, 11, 12, 13, 14].forEach(function (n) { [9, 10, 11].forEach(function (seed) { CONFIGS.push({ group: n + '人', name: n + ' 人 v17 種子' + seed, args: ['--players', n, '--seed', seed] }); }); });
+}
+
+// v17 驗證後: 修 13 人 (牛低屠夫高)、9 人 (屠夫低); 測出口離樣本箱  node sim-all.js 400 v17e
+if (process.argv[3] === 'v17e') {
+  CONFIGS = [];
+  function addE(n, name, sets) { [12, 13, 14].forEach(function (seed) { var a = ['--players', n, '--seed', seed]; sets.forEach(function (kv) { a.push('--set', kv); }); CONFIGS.push({ group: n + '人 ' + name, name: n + ' 人 ' + name + ' 種子' + seed, args: a }); }); }
+  addE(13, '毒效5', ['poisonDuration=5']);
+  addE(13, '毒效5 飼9', ['poisonDuration=5', 'breederSampleThreshold=9']);
+  addE(9, '毒效9', ['poisonDuration=9']);
+  addE(9, '毒效10', ['poisonDuration=10']);
+  addE(8, '出口離箱3', ['exitBoxMinDist=3']);
+  addE(8, '出口離箱3 只第1回合', ['exitBoxMinDist=3', 'exitBoxFirstOnly=1']);
+}
+
 function run(cfg) {
   return new Promise(function (resolve) {
     var args = [__dirname + '/sim.js', '--games', GAMES, '--json'].concat(cfg.args).map(String);
