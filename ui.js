@@ -1096,7 +1096,7 @@
     ['moveNoise', '移動噪點'], ['envNoise', '環境噪點'], ['interactNoise', '互動噪點'], ['lureTargetNoise', '誘導目標噪點'], ['poisonBonus', '下毒額外噪點'],
     ['lureSelfNoise', '誘導自身噪點'], ['resetNoise', '重製噪點'], ['carryNoisePerSample', '攜帶噪點/樣本'],
     ['corpseNoise', '屍體噪點'], ['decoyNoise', '誘餌槽噪點'], ['fatnessSmash', '撞牆門檻'], ['fatnessSplash', '波及門檻'],
-    ['fatnessWin', '牛勝肥度'], ['cowMoveBonus', '牛移動加成(肥度+N)']
+    ['fatnessWin', '牛勝肥度'], ['cowMoveBonus', '牛移動加成(肥度+N)'], ['cowHungerStep', '牛餓肚子每回合步數+N']
   ];
   function openParams() {
     var st = G.state, body = $('paramBody'); body.innerHTML = '';

@@ -21,7 +21,7 @@ http.createServer(function (req, res) {
   var file = path.join(ROOT, path.normalize(url).replace(/^(\.\.[/\\])+/, ''));
   fs.readFile(file, function (err, data) {
     if (err) { res.writeHead(404); res.end('404 Not Found'); return; }
-    res.writeHead(200, { 'Content-Type': TYPES[path.extname(file)] || 'application/octet-stream' });
+    res.writeHead(200, { 'Content-Type': TYPES[path.extname(file)] || 'application/octet-stream', 'Cache-Control': 'no-store' });
     res.end(data);
   });
 }).listen(PORT, function () {

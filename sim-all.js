@@ -586,6 +586,59 @@ if (process.argv[3] === 'v18b') {
   }); }); });
 }
 
+// 餓1 毒3 肥8 之後各人數微調  node sim-all.js 400 v18c
+if (process.argv[3] === 'v18c') {
+  CONFIGS = [];
+  var B = ['cowHungerStep=1', 'poisonBonus=0', 'fatnessWin=8'];
+  var V18C = [[7, '肥9', ['fatnessWin=9']], [7, '肥9 逃4', ['fatnessWin=9', 'runnerSampleThreshold=4']], [8, '逃4', ['runnerSampleThreshold=4']],
+    [10, '毒效5', ['poisonDuration=5']], [10, '毒效4', ['poisonDuration=4']], [11, '逃6', ['runnerSampleThreshold=6']], [11, '肥9 逃6', ['fatnessWin=9', 'runnerSampleThreshold=6']],
+    [12, '肥9 逃6', ['fatnessWin=9', 'runnerSampleThreshold=6']], [12, '肥9 逃6 飼8', ['fatnessWin=9', 'runnerSampleThreshold=6', 'breederSampleThreshold=8']],
+    [13, '肥9', ['fatnessWin=9']], [14, '逃6', ['runnerSampleThreshold=6']], [14, '肥9 逃6', ['fatnessWin=9', 'runnerSampleThreshold=6']]];
+  V18C.forEach(function (v) { [21, 22].forEach(function (seed) {
+    var a = ['--players', v[0], '--seed', seed]; B.concat(v[2]).forEach(function (kv) { a.push('--set', kv); });
+    CONFIGS.push({ group: v[0] + '人 ' + v[1], name: v[0] + ' 人 ' + v[1] + ' 種子' + seed, args: a });
+  }); });
+}
+
+// 第二輪: 7、10、13 人  node sim-all.js 400 v18d
+if (process.argv[3] === 'v18d') {
+  CONFIGS = [];
+  var B = ['cowHungerStep=1', 'poisonBonus=0'];
+  var V18D = [[7, '肥9 逃4 飼6', ['fatnessWin=9', 'runnerSampleThreshold=4', 'breederSampleThreshold=6']], [7, '肥8 逃4 飼6', ['fatnessWin=8', 'runnerSampleThreshold=4', 'breederSampleThreshold=6']],
+    [10, '肥9 毒效5', ['fatnessWin=9', 'poisonDuration=5']], [10, '肥9 毒效6', ['fatnessWin=9', 'poisonDuration=6']], [10, '肥9 毒效5 逃4', ['fatnessWin=9', 'poisonDuration=5', 'runnerSampleThreshold=4']],
+    [13, '肥9 逃4', ['fatnessWin=9', 'runnerSampleThreshold=4']]];
+  V18D.forEach(function (v) { [21, 22].forEach(function (seed) {
+    var a = ['--players', v[0], '--seed', seed]; B.concat(v[2]).forEach(function (kv) { a.push('--set', kv); });
+    CONFIGS.push({ group: v[0] + '人 ' + v[1], name: v[0] + ' 人 ' + v[1] + ' 種子' + seed, args: a });
+  }); });
+}
+
+// 第三輪: 7 人  node sim-all.js 400 v18e
+if (process.argv[3] === 'v18e') {
+  CONFIGS = [];
+  var B = ['cowHungerStep=1', 'poisonBonus=0', 'runnerSampleThreshold=4'];
+  [['肥8 逃4', ['fatnessWin=8']], ['肥9 逃4 毒效10', ['fatnessWin=9', 'poisonDuration=10']], ['肥8 逃4 毒效10', ['fatnessWin=8', 'poisonDuration=10']]].forEach(function (v) { [21, 22].forEach(function (seed) {
+    var a = ['--players', 7, '--seed', seed]; B.concat(v[1]).forEach(function (kv) { a.push('--set', kv); });
+    CONFIGS.push({ group: '7人 ' + v[0], name: '7 人 ' + v[0] + ' 種子' + seed, args: a });
+  }); });
+}
+
+// 第四輪: 7 人  node sim-all.js 400 v18f
+if (process.argv[3] === 'v18f') {
+  CONFIGS = [];
+  var B = ['cowHungerStep=1', 'poisonBonus=0', 'fatnessWin=9'];
+  [['逃5 飼6', ['runnerSampleThreshold=5', 'breederSampleThreshold=6']], ['逃4 每箱5', ['runnerSampleThreshold=4', 'boxSize=5']]].forEach(function (v) { [21, 22].forEach(function (seed) {
+    var a = ['--players', 7, '--seed', seed]; B.concat(v[1]).forEach(function (kv) { a.push('--set', kv); });
+    CONFIGS.push({ group: '7人 ' + v[0], name: '7 人 ' + v[0] + ' 種子' + seed, args: a });
+  }); });
+}
+
+// v18 最終驗證 (正式預設)  node sim-all.js 400 v18
+if (process.argv[3] === 'v18') {
+  CONFIGS = [];
+  [7, 8, 9, 10, 11, 12, 13, 14].forEach(function (n) { [31, 32, 33].forEach(function (seed) { CONFIGS.push({ group: n + '人', name: n + ' 人 v18 種子' + seed, args: ['--players', n, '--seed', seed] }); }); });
+}
+
 function run(cfg) {
   return new Promise(function (resolve) {
     var args = [__dirname + '/sim.js', '--games', GAMES, '--json'].concat(cfg.args).map(String);
