@@ -507,6 +507,20 @@
     eq(s.rooms[6].noise, 3, '3 樣本 → +3');
   });
 
+  test('v17.1: 第 1 回合出口至少離樣本箱 3 步', function () {
+    for (var g = 0; g < 60; g++) {
+      var names = []; for (var i = 0; i < 8; i++) names.push({ name: 'P' + i });
+      var s = E.newGame({ players: names, rng: E.mulberry32(500 + g), seed: 500 + g });
+      E.startRound(s);
+      // 出口離最近箱子的距離, 要是外圈所有格子裡最遠的 (或至少 3 步)
+      var boxes = []; s.rooms.forEach(function (r, i) { if (r.device === 'sample_box') boxes.push(E.bfsDist(s, i)); });
+      function near(x) { return Math.min.apply(null, boxes.map(function (d) { return d[x]; })); }
+      var best = 0; for (var x = 0; x < s.N * s.N; x++) { var rr = Math.floor(x / s.N), cc = x % s.N; if (rr === 0 || cc === 0 || rr === s.N - 1 || cc === s.N - 1) best = Math.max(best, near(x)); }
+      var got = near(s.exitCells[0]);
+      assert(got >= Math.min(3, best), '種子 ' + (500 + g) + ' 出口離箱 ' + got + ' 步, 外圈最遠 ' + best);
+    }
+  });
+
   function blankStateClone(s) { return E.cloneState(s); }
 
   // ---- 輸出 ----

@@ -286,19 +286,25 @@
     var rng = state._rngLive || Math.random;
     var forbid = state.exitCells.slice();
     // 逐一刷新
-    // 測試中: 出口至少離有樣本的箱子 exitBoxMinDist 步 (exitBoxFirstOnly = 只限第 1 回合); 找不到就不限制
-    var exD = state.config.exitBoxMinDist || 0, exFar = null;
+    // v17.1: 出口至少離有樣本的箱子 exitBoxMinDist 步 (exitBoxFirstOnly = 只限第 1 回合);
+    // 外圈沒有夠遠的格子時, 改挑離箱子最遠的那幾格
+    var exD = state.config.exitBoxMinDist || 0, boxD = null;
     if (exD && (!state.config.exitBoxFirstOnly || state.round <= 1)) {
-      exFar = {};
+      boxD = {};
+      ring.forEach(function (x) { boxD[x] = Infinity; });
       state.rooms.forEach(function (rm, bi) {
         if (rm.device !== 'sample_box' || rm.boxRemaining <= 0) return;
         var dB = bfsDist(state, bi);
-        ring.forEach(function (x) { if (dB[x] < exD) exFar[x] = true; });
+        ring.forEach(function (x) { if (dB[x] < boxD[x]) boxD[x] = dB[x]; });
       });
     }
     for (var t2 = 0; t2 < toRefresh; t2++) {
-      var pool = ring.filter(function (x) { return forbid.indexOf(x) < 0 && !(exFar && exFar[x]); });
-      if (pool.length === 0) pool = ring.filter(function (x) { return forbid.indexOf(x) < 0; });
+      var pool = ring.filter(function (x) { return forbid.indexOf(x) < 0; });
+      if (boxD && pool.length) {
+        var far = pool.filter(function (x) { return boxD[x] >= exD; });
+        if (!far.length) { var best = Math.max.apply(null, pool.map(function (x) { return boxD[x]; })); far = pool.filter(function (x) { return boxD[x] === best; }); }
+        pool = far;
+      }
       if (pool.length === 0) pool = ring.slice();
       var pickIdx = Math.floor((rng ? rng() : Math.random()) * pool.length);
       var picked = pool[pickIdx];

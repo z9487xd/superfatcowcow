@@ -6,9 +6,9 @@
 - 狀態存記憶體，每次動作自動存一份到 `localStorage`，筆電當掉可還原。
 - 為投影設計：深色底、高對比、大字。
 
-依最初的建置需求與規則書 v6 實作，並經模擬測試修正為 **規則 v17**。
+依最初的建置需求與規則書 v6 實作，並經模擬測試修正為 **規則 v17.1**。
 
-- **玩家看的規則：`說明書.md`**（v17，現行預設）
+- **玩家看的規則：`說明書.md`**（v17.1，現行預設）
 - **模擬測試數據：`平衡測試報告.md`**（約 5 萬場電腦對局、規則演變）
 - **待辦與改進想法：`設計改進方案.md`**（還沒實作）
 
@@ -141,7 +141,7 @@ node sim-all.js 400 v17            # 現行規則各人數驗證
 - `timeoutCowWins: 1`：第 12 回合結束沒人達成 → 牛贏。
 - `teamTransfer: 1`：所有陣營都能把任意數量的樣本交給同房、同陣營的隊友（`engine.js` 的 `giveSamples`、`canTransfer`）。
 - `dropAllowed: 1`：可以把樣本丟在地上，任何人用互動卡撿（`dropSamples`）。
-- 毒死優先（`state.cow.dead`）；只有逃亡者能從出口離開（`tryLeaveViaExit`）；只有屠夫能下毒（`declareLure`）；消音器清自己和四鄰格（`silencerRadius`）；回聲器複製後原房間砍半（`echoHalveSource`）；毒只維持一回合（`poisonOneRound`）；樣本箱至少離牛 2 步（`boxMinDist`）；下毒那次誘導目標額外 +3（`poisonBonus`）；殘響的手牌是移動／誘導／互動，互動只能操作回聲器，用過任兩張全部收回（`ECHO_CARDS`）。
+- 毒死優先（`state.cow.dead`）；只有逃亡者能從出口離開（`tryLeaveViaExit`）；只有屠夫能下毒（`declareLure`）；消音器清自己和四鄰格（`silencerRadius`）；回聲器複製後原房間砍半（`echoHalveSource`）；毒只維持一回合（`poisonOneRound`）；樣本箱至少離牛 2 步（`boxMinDist`）；下毒那次誘導目標額外 +3（`poisonBonus`）；第 1 回合出口至少離樣本箱 3 步（`exitBoxMinDist`、`exitBoxFirstOnly`）；殘響的手牌是移動／誘導／互動，互動只能操作回聲器，用過任兩張全部收回（`ECHO_CARDS`）。
 - 測試用開關（預設關閉）：`breederTransfer: 1`、`breederWinAny: 0/2`、`cowLateBonus`；設成 0 可回到舊規則的開關：`firstWinEnds`、`timeoutCowWins`。
 
 ### 未實作（規則書標為「待實測」或需要現場人判斷的變體）
