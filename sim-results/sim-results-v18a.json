@@ -1,0 +1,3206 @@
+{
+ "games": 400,
+ "date": "2026-10-10T04:36:04.160Z",
+ "results": [
+  {
+   "cfg": {
+    "group": "7人 基準",
+    "name": "7 人 基準 種子21",
+    "args": [
+     "--players",
+     7,
+     "--seed",
+     21
+    ]
+   },
+   "r": {
+    "games": 400,
+    "win": {
+     "cow": 24.5,
+     "breeder": 27,
+     "butcher": 26.3,
+     "runner": 25.3,
+     "none": 0
+    },
+    "reason": {
+     "rounds": 63,
+     "fat": 4,
+     "poison": 26.3,
+     "allEcho": 6.8
+    },
+    "avgRounds": 8.47,
+    "avgFat": 4.47,
+    "avgKills": 3.77,
+    "firstDeath": 3.77,
+    "breederDQ": 0,
+    "avgDoses": 1.59,
+    "poisonLures": 2.47,
+    "transfers": 0.93,
+    "breederWinRound": 7.9,
+    "cowStayRate": 0,
+    "previewMissRate": 0,
+    "queueTieRate": 38.6,
+    "boxLeft": 5.5,
+    "escaped": 0.25,
+    "maxNoise": 42.92,
+    "resetOnlyPerGame": 0,
+    "forfeitsPerGame": {
+     "env": 0.63
+    }
+   },
+   "sec": 319.268
+  },
+  {
+   "cfg": {
+    "group": "7人 基準",
+    "name": "7 人 基準 種子22",
+    "args": [
+     "--players",
+     7,
+     "--seed",
+     22
+    ]
+   },
+   "r": {
+    "games": 400,
+    "win": {
+     "cow": 23.5,
+     "breeder": 26.5,
+     "butcher": 25.3,
+     "runner": 26.5,
+     "none": 0
+    },
+    "reason": {
+     "rounds": 63.8,
+     "fat": 2.8,
+     "poison": 25.3,
+     "allEcho": 8.3
+    },
+    "avgRounds": 8.38,
+    "avgFat": 4.39,
+    "avgKills": 3.79,
+    "firstDeath": 3.53,
+    "breederDQ": 0,
+    "avgDoses": 1.6,
+    "poisonLures": 2.53,
+    "transfers": 0.91,
+    "breederWinRound": 7.8,
+    "cowStayRate": 0,
+    "previewMissRate": 0,
+    "queueTieRate": 38.7,
+    "boxLeft": 5.35,
+    "escaped": 0.27,
+    "maxNoise": 42.61,
+    "resetOnlyPerGame": 0,
+    "forfeitsPerGame": {
+     "env": 0.58
+    }
+   },
+   "sec": 320.911
+  },
+  {
+   "cfg": {
+    "group": "7人 餓+1",
+    "name": "7 人 餓+1 種子21",
+    "args": [
+     "--players",
+     7,
+     "--seed",
+     21,
+     "--set",
+     "cowHungerStep=1"
+    ]
+   },
+   "r": {
+    "games": 400,
+    "win": {
+     "cow": 26.8,
+     "breeder": 21.3,
+     "butcher": 37.3,
+     "runner": 18.3,
+     "none": 0
+    },
+    "reason": {
+     "rounds": 41.8,
+     "fat": 7,
+     "poison": 37.3,
+     "allEcho": 14
+    },
+    "avgRounds": 8.12,
+    "avgFat": 5.22,
+    "avgKills": 4.34,
+    "firstDeath": 3.07,
+    "breederDQ": 0,
+    "avgDoses": 1.97,
+    "poisonLures": 2.83,
+    "transfers": 0.81,
+    "breederWinRound": 7.7,
+    "cowStayRate": 0,
+    "previewMissRate": 0,
+    "queueTieRate": 37.9,
+    "boxLeft": 6.18,
+    "escaped": 0.18,
+    "maxNoise": 38.26,
+    "resetOnlyPerGame": 0,
+    "forfeitsPerGame": {
+     "env": 0.42
+    }
+   },
+   "sec": 295.232
+  },
+  {
+   "cfg": {
+    "group": "7人 餓+1",
+    "name": "7 人 餓+1 種子22",
+    "args": [
+     "--players",
+     7,
+     "--seed",
+     22,
+     "--set",
+     "cowHungerStep=1"
+    ]
+   },
+   "r": {
+    "games": 400,
+    "win": {
+     "cow": 28.3,
+     "breeder": 25.3,
+     "butcher": 33.5,
+     "runner": 15.5,
+     "none": 0
+    },
+    "reason": {
+     "rounds": 47,
+     "fat": 6.3,
+     "poison": 33.5,
+     "allEcho": 13.3
+    },
+    "avgRounds": 8.14,
+    "avgFat": 5.28,
+    "avgKills": 4.56,
+    "firstDeath": 2.84,
+    "breederDQ": 0,
+    "avgDoses": 1.89,
+    "poisonLures": 2.77,
+    "transfers": 0.77,
+    "breederWinRound": 7.4,
+    "cowStayRate": 0,
+    "previewMissRate": 0,
+    "queueTieRate": 37.2,
+    "boxLeft": 6.35,
+    "escaped": 0.16,
+    "maxNoise": 37.23,
+    "resetOnlyPerGame": 0,
+    "forfeitsPerGame": {
+     "env": 0.49
+    }
+   },
+   "sec": 294.337
+  },
+  {
+   "cfg": {
+    "group": "7人 餓+1 肥7",
+    "name": "7 人 餓+1 肥7 種子21",
+    "args": [
+     "--players",
+     7,
+     "--seed",
+     21,
+     "--set",
+     "cowHungerStep=1",
+     "--set",
+     "fatnessWin=7"
+    ]
+   },
+   "r": {
+    "games": 400,
+    "win": {
+     "cow": 32,
+     "breeder": 20.8,
+     "butcher": 34.3,
+     "runner": 17.5,
+     "none": 0
+    },
+    "reason": {
+     "rounds": 36,
+     "fat": 21,
+     "poison": 34.3,
+     "allEcho": 8.8
+    },
+    "avgRounds": 7.88,
+    "avgFat": 5,
+    "avgKills": 4.2,
+    "firstDeath": 3.07,
+    "breederDQ": 0,
+    "avgDoses": 1.91,
+    "poisonLures": 2.77,
+    "transfers": 0.8,
+    "breederWinRound": 7.7,
+    "cowStayRate": 0,
+    "previewMissRate": 0,
+    "queueTieRate": 37.9,
+    "boxLeft": 6.23,
+    "escaped": 0.18,
+    "maxNoise": 38.16,
+    "resetOnlyPerGame": 0,
+    "forfeitsPerGame": {
+     "env": 0.42
+    }
+   },
+   "sec": 285.919
+  },
+  {
+   "cfg": {
+    "group": "7人 餓+1 肥7",
+    "name": "7 人 餓+1 肥7 種子22",
+    "args": [
+     "--players",
+     7,
+     "--seed",
+     22,
+     "--set",
+     "cowHungerStep=1",
+     "--set",
+     "fatnessWin=7"
+    ]
+   },
+   "r": {
+    "games": 400,
+    "win": {
+     "cow": 34.3,
+     "breeder": 24.5,
+     "butcher": 30.3,
+     "runner": 14.5,
+     "none": 0
+    },
+    "reason": {
+     "rounds": 38.5,
+     "fat": 24.5,
+     "poison": 30.3,
+     "allEcho": 6.8
+    },
+    "avgRounds": 7.89,
+    "avgFat": 5.05,
+    "avgKills": 4.43,
+    "firstDeath": 2.84,
+    "breederDQ": 0,
+    "avgDoses": 1.83,
+    "poisonLures": 2.71,
+    "transfers": 0.77,
+    "breederWinRound": 7.3,
+    "cowStayRate": 0,
+    "previewMissRate": 0,
+    "queueTieRate": 37.2,
+    "boxLeft": 6.38,
+    "escaped": 0.14,
+    "maxNoise": 37.22,
+    "resetOnlyPerGame": 0,
+    "forfeitsPerGame": {
+     "env": 0.49
+    }
+   },
+   "sec": 285.236
+  },
+  {
+   "cfg": {
+    "group": "7人 肥7",
+    "name": "7 人 肥7 種子21",
+    "args": [
+     "--players",
+     7,
+     "--seed",
+     21,
+     "--set",
+     "fatnessWin=7"
+    ]
+   },
+   "r": {
+    "games": 400,
+    "win": {
+     "cow": 28,
+     "breeder": 26.3,
+     "butcher": 24.5,
+     "runner": 24.5,
+     "none": 0
+    },
+    "reason": {
+     "rounds": 56.3,
+     "fat": 15,
+     "poison": 24.5,
+     "allEcho": 4.3
+    },
+    "avgRounds": 8.33,
+    "avgFat": 4.33,
+    "avgKills": 3.67,
+    "firstDeath": 3.77,
+    "breederDQ": 0,
+    "avgDoses": 1.56,
+    "poisonLures": 2.44,
+    "transfers": 0.93,
+    "breederWinRound": 7.8,
+    "cowStayRate": 0,
+    "previewMissRate": 0,
+    "queueTieRate": 38.6,
+    "boxLeft": 5.54,
+    "escaped": 0.25,
+    "maxNoise": 42.82,
+    "resetOnlyPerGame": 0,
+    "forfeitsPerGame": {
+     "env": 0.63
+    }
+   },
+   "sec": 312.811
+  },
+  {
+   "cfg": {
+    "group": "7人 肥7",
+    "name": "7 人 肥7 種子22",
+    "args": [
+     "--players",
+     7,
+     "--seed",
+     22,
+     "--set",
+     "fatnessWin=7"
+    ]
+   },
+   "r": {
+    "games": 400,
+    "win": {
+     "cow": 26.8,
+     "breeder": 26,
+     "butcher": 23.5,
+     "runner": 25.8,
+     "none": 0
+    },
+    "reason": {
+     "rounds": 57,
+     "fat": 16,
+     "poison": 23.5,
+     "allEcho": 3.5
+    },
+    "avgRounds": 8.24,
+    "avgFat": 4.26,
+    "avgKills": 3.69,
+    "firstDeath": 3.53,
+    "breederDQ": 0,
+    "avgDoses": 1.57,
+    "poisonLures": 2.49,
+    "transfers": 0.9,
+    "breederWinRound": 7.7,
+    "cowStayRate": 0,
+    "previewMissRate": 0,
+    "queueTieRate": 38.6,
+    "boxLeft": 5.37,
+    "escaped": 0.26,
+    "maxNoise": 42.57,
+    "resetOnlyPerGame": 0,
+    "forfeitsPerGame": {
+     "env": 0.58
+    }
+   },
+   "sec": 317.538
+  },
+  {
+   "cfg": {
+    "group": "8人 基準",
+    "name": "8 人 基準 種子21",
+    "args": [
+     "--players",
+     8,
+     "--seed",
+     21
+    ]
+   },
+   "r": {
+    "games": 400,
+    "win": {
+     "cow": 24.5,
+     "breeder": 24.8,
+     "butcher": 22.5,
+     "runner": 30.5,
+     "none": 0
+    },
+    "reason": {
+     "rounds": 67.8,
+     "fat": 4,
+     "poison": 22.5,
+     "allEcho": 5.8
+    },
+    "avgRounds": 8.4,
+    "avgFat": 4.39,
+    "avgKills": 4.11,
+    "firstDeath": 3.65,
+    "breederDQ": 0,
+    "avgDoses": 1.49,
+    "poisonLures": 2.32,
+    "transfers": 1.36,
+    "breederWinRound": 7.7,
+    "cowStayRate": 0,
+    "previewMissRate": 0,
+    "queueTieRate": 42.1,
+    "boxLeft": 2.71,
+    "escaped": 0.31,
+    "maxNoise": 44.05,
+    "resetOnlyPerGame": 0.01,
+    "forfeitsPerGame": {
+     "env": 0.69
+    }
+   },
+   "sec": 376.673
+  },
+  {
+   "cfg": {
+    "group": "8人 基準",
+    "name": "8 人 基準 種子22",
+    "args": [
+     "--players",
+     8,
+     "--seed",
+     22
+    ]
+   },
+   "r": {
+    "games": 400,
+    "win": {
+     "cow": 23.5,
+     "breeder": 24,
+     "butcher": 27.8,
+     "runner": 26.3,
+     "none": 0
+    },
+    "reason": {
+     "rounds": 63.5,
+     "fat": 3.3,
+     "poison": 27.8,
+     "allEcho": 5.5
+    },
+    "avgRounds": 8.47,
+    "avgFat": 4.35,
+    "avgKills": 4.07,
+    "firstDeath": 3.72,
+    "breederDQ": 0,
+    "avgDoses": 1.51,
+    "poisonLures": 2.27,
+    "transfers": 1.28,
+    "breederWinRound": 7.6,
+    "cowStayRate": 0,
+    "previewMissRate": 0,
+    "queueTieRate": 42.6,
+    "boxLeft": 2.68,
+    "escaped": 0.26,
+    "maxNoise": 45.62,
+    "resetOnlyPerGame": 0,
+    "forfeitsPerGame": {
+     "env": 0.62
+    }
+   },
+   "sec": 374.024
+  },
+  {
+   "cfg": {
+    "group": "8人 餓+1",
+    "name": "8 人 餓+1 種子21",
+    "args": [
+     "--players",
+     8,
+     "--seed",
+     21,
+     "--set",
+     "cowHungerStep=1"
+    ]
+   },
+   "r": {
+    "games": 400,
+    "win": {
+     "cow": 21.8,
+     "breeder": 24,
+     "butcher": 39,
+     "runner": 19,
+     "none": 0
+    },
+    "reason": {
+     "rounds": 45.5,
+     "fat": 4.8,
+     "poison": 39,
+     "allEcho": 10.8
+    },
+    "avgRounds": 8.02,
+    "avgFat": 5.17,
+    "avgKills": 4.88,
+    "firstDeath": 2.77,
+    "breederDQ": 0,
+    "avgDoses": 1.92,
+    "poisonLures": 2.71,
+    "transfers": 1.17,
+    "breederWinRound": 7.6,
+    "cowStayRate": 0,
+    "previewMissRate": 0,
+    "queueTieRate": 41.1,
+    "boxLeft": 3.12,
+    "escaped": 0.19,
+    "maxNoise": 39.73,
+    "resetOnlyPerGame": 0.01,
+    "forfeitsPerGame": {
+     "env": 0.6
+    }
+   },
+   "sec": 330.584
+  },
+  {
+   "cfg": {
+    "group": "8人 餓+1",
+    "name": "8 人 餓+1 種子22",
+    "args": [
+     "--players",
+     8,
+     "--seed",
+     22,
+     "--set",
+     "cowHungerStep=1"
+    ]
+   },
+   "r": {
+    "games": 400,
+    "win": {
+     "cow": 24.3,
+     "breeder": 22.8,
+     "butcher": 33,
+     "runner": 23,
+     "none": 0
+    },
+    "reason": {
+     "rounds": 49.5,
+     "fat": 6.5,
+     "poison": 33,
+     "allEcho": 11
+    },
+    "avgRounds": 8.13,
+    "avgFat": 5.15,
+    "avgKills": 4.86,
+    "firstDeath": 2.9,
+    "breederDQ": 0,
+    "avgDoses": 1.79,
+    "poisonLures": 2.54,
+    "transfers": 1.13,
+    "breederWinRound": 7.1,
+    "cowStayRate": 0,
+    "previewMissRate": 0,
+    "queueTieRate": 41.6,
+    "boxLeft": 3.22,
+    "escaped": 0.23,
+    "maxNoise": 40,
+    "resetOnlyPerGame": 0,
+    "forfeitsPerGame": {
+     "env": 0.5
+    }
+   },
+   "sec": 339.014
+  },
+  {
+   "cfg": {
+    "group": "8人 餓+1 肥7",
+    "name": "8 人 餓+1 肥7 種子21",
+    "args": [
+     "--players",
+     8,
+     "--seed",
+     21,
+     "--set",
+     "cowHungerStep=1",
+     "--set",
+     "fatnessWin=7"
+    ]
+   },
+   "r": {
+    "games": 400,
+    "win": {
+     "cow": 26,
+     "breeder": 22.8,
+     "butcher": 36.5,
+     "runner": 18.8,
+     "none": 0
+    },
+    "reason": {
+     "rounds": 40.3,
+     "fat": 17.5,
+     "poison": 36.5,
+     "allEcho": 5.8
+    },
+    "avgRounds": 7.83,
+    "avgFat": 4.98,
+    "avgKills": 4.75,
+    "firstDeath": 2.77,
+    "breederDQ": 0,
+    "avgDoses": 1.89,
+    "poisonLures": 2.67,
+    "transfers": 1.17,
+    "breederWinRound": 7.4,
+    "cowStayRate": 0,
+    "previewMissRate": 0,
+    "queueTieRate": 41.1,
+    "boxLeft": 3.14,
+    "escaped": 0.19,
+    "maxNoise": 39.69,
+    "resetOnlyPerGame": 0.01,
+    "forfeitsPerGame": {
+     "env": 0.59
+    }
+   },
+   "sec": 324.677
+  },
+  {
+   "cfg": {
+    "group": "8人 餓+1 肥7",
+    "name": "8 人 餓+1 肥7 種子22",
+    "args": [
+     "--players",
+     8,
+     "--seed",
+     22,
+     "--set",
+     "cowHungerStep=1",
+     "--set",
+     "fatnessWin=7"
+    ]
+   },
+   "r": {
+    "games": 400,
+    "win": {
+     "cow": 29.3,
+     "breeder": 21.8,
+     "butcher": 29.5,
+     "runner": 22.5,
+     "none": 0
+    },
+    "reason": {
+     "rounds": 42.8,
+     "fat": 22.8,
+     "poison": 29.5,
+     "allEcho": 5
+    },
+    "avgRounds": 7.88,
+    "avgFat": 4.9,
+    "avgKills": 4.68,
+    "firstDeath": 2.9,
+    "breederDQ": 0,
+    "avgDoses": 1.74,
+    "poisonLures": 2.48,
+    "transfers": 1.12,
+    "breederWinRound": 7,
+    "cowStayRate": 0,
+    "previewMissRate": 0,
+    "queueTieRate": 41.5,
+    "boxLeft": 3.27,
+    "escaped": 0.23,
+    "maxNoise": 39.91,
+    "resetOnlyPerGame": 0,
+    "forfeitsPerGame": {
+     "env": 0.5
+    }
+   },
+   "sec": 334.883
+  },
+  {
+   "cfg": {
+    "group": "8人 肥7",
+    "name": "8 人 肥7 種子21",
+    "args": [
+     "--players",
+     8,
+     "--seed",
+     21,
+     "--set",
+     "fatnessWin=7"
+    ]
+   },
+   "r": {
+    "games": 400,
+    "win": {
+     "cow": 29.5,
+     "breeder": 23.8,
+     "butcher": 19.3,
+     "runner": 29.8,
+     "none": 0
+    },
+    "reason": {
+     "rounds": 63.3,
+     "fat": 14.8,
+     "poison": 19.3,
+     "allEcho": 2.8
+    },
+    "avgRounds": 8.21,
+    "avgFat": 4.21,
+    "avgKills": 3.99,
+    "firstDeath": 3.65,
+    "breederDQ": 0,
+    "avgDoses": 1.45,
+    "poisonLures": 2.28,
+    "transfers": 1.35,
+    "breederWinRound": 7.6,
+    "cowStayRate": 0,
+    "previewMissRate": 0,
+    "queueTieRate": 42.1,
+    "boxLeft": 2.73,
+    "escaped": 0.3,
+    "maxNoise": 44.04,
+    "resetOnlyPerGame": 0.01,
+    "forfeitsPerGame": {
+     "env": 0.69
+    }
+   },
+   "sec": 365.343
+  },
+  {
+   "cfg": {
+    "group": "8人 肥7",
+    "name": "8 人 肥7 種子22",
+    "args": [
+     "--players",
+     8,
+     "--seed",
+     22,
+     "--set",
+     "fatnessWin=7"
+    ]
+   },
+   "r": {
+    "games": 400,
+    "win": {
+     "cow": 28,
+     "breeder": 23.3,
+     "butcher": 24.3,
+     "runner": 26.3,
+     "none": 0
+    },
+    "reason": {
+     "rounds": 58.8,
+     "fat": 14,
+     "poison": 24.3,
+     "allEcho": 3
+    },
+    "avgRounds": 8.32,
+    "avgFat": 4.2,
+    "avgKills": 3.95,
+    "firstDeath": 3.72,
+    "breederDQ": 0,
+    "avgDoses": 1.46,
+    "poisonLures": 2.22,
+    "transfers": 1.28,
+    "breederWinRound": 7.5,
+    "cowStayRate": 0,
+    "previewMissRate": 0,
+    "queueTieRate": 42.6,
+    "boxLeft": 2.72,
+    "escaped": 0.26,
+    "maxNoise": 45.57,
+    "resetOnlyPerGame": 0,
+    "forfeitsPerGame": {
+     "env": 0.62
+    }
+   },
+   "sec": 371.409
+  },
+  {
+   "cfg": {
+    "group": "9人 基準",
+    "name": "9 人 基準 種子21",
+    "args": [
+     "--players",
+     9,
+     "--seed",
+     21
+    ]
+   },
+   "r": {
+    "games": 400,
+    "win": {
+     "cow": 24,
+     "breeder": 24,
+     "butcher": 24,
+     "runner": 29.5,
+     "none": 0
+    },
+    "reason": {
+     "rounds": 67,
+     "fat": 3.8,
+     "poison": 24,
+     "allEcho": 5.3
+    },
+    "avgRounds": 8.5,
+    "avgFat": 4.37,
+    "avgKills": 4.63,
+    "firstDeath": 3.47,
+    "breederDQ": 0,
+    "avgDoses": 1.47,
+    "poisonLures": 2.18,
+    "transfers": 1.73,
+    "breederWinRound": 7.8,
+    "cowStayRate": 0,
+    "previewMissRate": 0,
+    "queueTieRate": 45.6,
+    "boxLeft": 1.95,
+    "escaped": 0.3,
+    "maxNoise": 49.23,
+    "resetOnlyPerGame": 0,
+    "forfeitsPerGame": {
+     "env": 0.8
+    }
+   },
+   "sec": 429.438
+  },
+  {
+   "cfg": {
+    "group": "9人 基準",
+    "name": "9 人 基準 種子22",
+    "args": [
+     "--players",
+     9,
+     "--seed",
+     22
+    ]
+   },
+   "r": {
+    "games": 400,
+    "win": {
+     "cow": 26.3,
+     "breeder": 23.3,
+     "butcher": 25,
+     "runner": 27.5,
+     "none": 0
+    },
+    "reason": {
+     "rounds": 64.5,
+     "fat": 6,
+     "poison": 25,
+     "allEcho": 4.5
+    },
+    "avgRounds": 8.64,
+    "avgFat": 4.47,
+    "avgKills": 4.65,
+    "firstDeath": 3.53,
+    "breederDQ": 0,
+    "avgDoses": 1.45,
+    "poisonLures": 2.2,
+    "transfers": 1.76,
+    "breederWinRound": 7.9,
+    "cowStayRate": 0,
+    "previewMissRate": 0,
+    "queueTieRate": 46.1,
+    "boxLeft": 2.24,
+    "escaped": 0.28,
+    "maxNoise": 48.57,
+    "resetOnlyPerGame": 0,
+    "forfeitsPerGame": {
+     "env": 0.67
+    }
+   },
+   "sec": 432.261
+  },
+  {
+   "cfg": {
+    "group": "9人 餓+1",
+    "name": "9 人 餓+1 種子21",
+    "args": [
+     "--players",
+     9,
+     "--seed",
+     21,
+     "--set",
+     "cowHungerStep=1"
+    ]
+   },
+   "r": {
+    "games": 400,
+    "win": {
+     "cow": 21.5,
+     "breeder": 25.3,
+     "butcher": 37.3,
+     "runner": 19.8,
+     "none": 0
+    },
+    "reason": {
+     "rounds": 47.3,
+     "fat": 8,
+     "poison": 37.3,
+     "allEcho": 7.5
+    },
+    "avgRounds": 8.23,
+    "avgFat": 5.33,
+    "avgKills": 5.42,
+    "firstDeath": 2.85,
+    "breederDQ": 0,
+    "avgDoses": 1.91,
+    "poisonLures": 2.67,
+    "transfers": 1.52,
+    "breederWinRound": 7.2,
+    "cowStayRate": 0,
+    "previewMissRate": 0,
+    "queueTieRate": 45.1,
+    "boxLeft": 2.38,
+    "escaped": 0.2,
+    "maxNoise": 44.18,
+    "resetOnlyPerGame": 0,
+    "forfeitsPerGame": {
+     "env": 0.52
+    }
+   },
+   "sec": 391.333
+  },
+  {
+   "cfg": {
+    "group": "9人 餓+1",
+    "name": "9 人 餓+1 種子22",
+    "args": [
+     "--players",
+     9,
+     "--seed",
+     22,
+     "--set",
+     "cowHungerStep=1"
+    ]
+   },
+   "r": {
+    "games": 400,
+    "win": {
+     "cow": 23.8,
+     "breeder": 22.8,
+     "butcher": 36.3,
+     "runner": 21.3,
+     "none": 0
+    },
+    "reason": {
+     "rounds": 47.8,
+     "fat": 8,
+     "poison": 36.3,
+     "allEcho": 8
+    },
+    "avgRounds": 8.24,
+    "avgFat": 5.3,
+    "avgKills": 5.54,
+    "firstDeath": 2.69,
+    "breederDQ": 0,
+    "avgDoses": 1.82,
+    "poisonLures": 2.53,
+    "transfers": 1.59,
+    "breederWinRound": 7.4,
+    "cowStayRate": 0,
+    "previewMissRate": 0,
+    "queueTieRate": 44.7,
+    "boxLeft": 2.72,
+    "escaped": 0.21,
+    "maxNoise": 42.7,
+    "resetOnlyPerGame": 0,
+    "forfeitsPerGame": {
+     "env": 0.54
+    }
+   },
+   "sec": 390.322
+  },
+  {
+   "cfg": {
+    "group": "9人 餓+1 肥7",
+    "name": "9 人 餓+1 肥7 種子21",
+    "args": [
+     "--players",
+     9,
+     "--seed",
+     21,
+     "--set",
+     "cowHungerStep=1",
+     "--set",
+     "fatnessWin=7"
+    ]
+   },
+   "r": {
+    "games": 400,
+    "win": {
+     "cow": 29.5,
+     "breeder": 24.5,
+     "butcher": 32.3,
+     "runner": 18.3,
+     "none": 0
+    },
+    "reason": {
+     "rounds": 40.3,
+     "fat": 25.3,
+     "poison": 32.3,
+     "allEcho": 2.3
+    },
+    "avgRounds": 7.94,
+    "avgFat": 5.05,
+    "avgKills": 5.24,
+    "firstDeath": 2.85,
+    "breederDQ": 0,
+    "avgDoses": 1.84,
+    "poisonLures": 2.58,
+    "transfers": 1.51,
+    "breederWinRound": 7.1,
+    "cowStayRate": 0,
+    "previewMissRate": 0,
+    "queueTieRate": 45.1,
+    "boxLeft": 2.45,
+    "escaped": 0.18,
+    "maxNoise": 44.11,
+    "resetOnlyPerGame": 0,
+    "forfeitsPerGame": {
+     "env": 0.51
+    }
+   },
+   "sec": 387.514
+  },
+  {
+   "cfg": {
+    "group": "9人 餓+1 肥7",
+    "name": "9 人 餓+1 肥7 種子22",
+    "args": [
+     "--players",
+     9,
+     "--seed",
+     22,
+     "--set",
+     "cowHungerStep=1",
+     "--set",
+     "fatnessWin=7"
+    ]
+   },
+   "r": {
+    "games": 400,
+    "win": {
+     "cow": 30.3,
+     "breeder": 21.5,
+     "butcher": 32.8,
+     "runner": 20.3,
+     "none": 0
+    },
+    "reason": {
+     "rounds": 38.5,
+     "fat": 24.5,
+     "poison": 32.8,
+     "allEcho": 4.3
+    },
+    "avgRounds": 7.98,
+    "avgFat": 5.04,
+    "avgKills": 5.34,
+    "firstDeath": 2.69,
+    "breederDQ": 0,
+    "avgDoses": 1.75,
+    "poisonLures": 2.45,
+    "transfers": 1.57,
+    "breederWinRound": 7.2,
+    "cowStayRate": 0,
+    "previewMissRate": 0,
+    "queueTieRate": 44.6,
+    "boxLeft": 2.77,
+    "escaped": 0.2,
+    "maxNoise": 42.63,
+    "resetOnlyPerGame": 0,
+    "forfeitsPerGame": {
+     "env": 0.54
+    }
+   },
+   "sec": 379.87
+  },
+  {
+   "cfg": {
+    "group": "9人 肥7",
+    "name": "9 人 肥7 種子21",
+    "args": [
+     "--players",
+     9,
+     "--seed",
+     21,
+     "--set",
+     "fatnessWin=7"
+    ]
+   },
+   "r": {
+    "games": 400,
+    "win": {
+     "cow": 28.8,
+     "breeder": 23.5,
+     "butcher": 21.5,
+     "runner": 28.5,
+     "none": 0
+    },
+    "reason": {
+     "rounds": 58.5,
+     "fat": 17,
+     "poison": 21.5,
+     "allEcho": 3
+    },
+    "avgRounds": 8.33,
+    "avgFat": 4.2,
+    "avgKills": 4.47,
+    "firstDeath": 3.47,
+    "breederDQ": 0,
+    "avgDoses": 1.44,
+    "poisonLures": 2.14,
+    "transfers": 1.72,
+    "breederWinRound": 7.7,
+    "cowStayRate": 0,
+    "previewMissRate": 0,
+    "queueTieRate": 45.7,
+    "boxLeft": 1.98,
+    "escaped": 0.28,
+    "maxNoise": 49.18,
+    "resetOnlyPerGame": 0,
+    "forfeitsPerGame": {
+     "env": 0.8
+    }
+   },
+   "sec": 424.94
+  },
+  {
+   "cfg": {
+    "group": "9人 肥7",
+    "name": "9 人 肥7 種子22",
+    "args": [
+     "--players",
+     9,
+     "--seed",
+     22,
+     "--set",
+     "fatnessWin=7"
+    ]
+   },
+   "r": {
+    "games": 400,
+    "win": {
+     "cow": 29,
+     "breeder": 22.8,
+     "butcher": 23.3,
+     "runner": 27.3,
+     "none": 0
+    },
+    "reason": {
+     "rounds": 57,
+     "fat": 18.3,
+     "poison": 23.3,
+     "allEcho": 1.5
+    },
+    "avgRounds": 8.44,
+    "avgFat": 4.27,
+    "avgKills": 4.5,
+    "firstDeath": 3.53,
+    "breederDQ": 0,
+    "avgDoses": 1.42,
+    "poisonLures": 2.17,
+    "transfers": 1.75,
+    "breederWinRound": 7.9,
+    "cowStayRate": 0,
+    "previewMissRate": 0,
+    "queueTieRate": 46.1,
+    "boxLeft": 2.27,
+    "escaped": 0.27,
+    "maxNoise": 48.57,
+    "resetOnlyPerGame": 0,
+    "forfeitsPerGame": {
+     "env": 0.67
+    }
+   },
+   "sec": 423.646
+  },
+  {
+   "cfg": {
+    "group": "10人 基準",
+    "name": "10 人 基準 種子21",
+    "args": [
+     "--players",
+     10,
+     "--seed",
+     21
+    ]
+   },
+   "r": {
+    "games": 400,
+    "win": {
+     "cow": 19.5,
+     "breeder": 29,
+     "butcher": 33.3,
+     "runner": 19,
+     "none": 0
+    },
+    "reason": {
+     "rounds": 61.8,
+     "fat": 3,
+     "poison": 33.3,
+     "allEcho": 2
+    },
+    "avgRounds": 8.43,
+    "avgFat": 4.44,
+    "avgKills": 5.07,
+    "firstDeath": 3.22,
+    "breederDQ": 0,
+    "avgDoses": 1.77,
+    "poisonLures": 2.63,
+    "transfers": 1.91,
+    "breederWinRound": 7.4,
+    "cowStayRate": 0,
+    "previewMissRate": 0,
+    "queueTieRate": 48.4,
+    "boxLeft": 1.34,
+    "escaped": 0.19,
+    "maxNoise": 52.67,
+    "resetOnlyPerGame": 0.01,
+    "forfeitsPerGame": {
+     "env": 0.92
+    }
+   },
+   "sec": 509.035
+  },
+  {
+   "cfg": {
+    "group": "10人 基準",
+    "name": "10 人 基準 種子22",
+    "args": [
+     "--players",
+     10,
+     "--seed",
+     22
+    ]
+   },
+   "r": {
+    "games": 400,
+    "win": {
+     "cow": 24.8,
+     "breeder": 25.8,
+     "butcher": 29.5,
+     "runner": 23.3,
+     "none": 0
+    },
+    "reason": {
+     "rounds": 63.8,
+     "fat": 4,
+     "poison": 29.5,
+     "allEcho": 2.8
+    },
+    "avgRounds": 8.47,
+    "avgFat": 4.37,
+    "avgKills": 4.99,
+    "firstDeath": 3.4,
+    "breederDQ": 0,
+    "avgDoses": 1.73,
+    "poisonLures": 2.63,
+    "transfers": 1.85,
+    "breederWinRound": 7.8,
+    "cowStayRate": 0,
+    "previewMissRate": 0,
+    "queueTieRate": 48.4,
+    "boxLeft": 1.66,
+    "escaped": 0.23,
+    "maxNoise": 54.17,
+    "resetOnlyPerGame": 0,
+    "forfeitsPerGame": {
+     "env": 0.85
+    }
+   },
+   "sec": 506.225
+  },
+  {
+   "cfg": {
+    "group": "10人 餓+1",
+    "name": "10 人 餓+1 種子21",
+    "args": [
+     "--players",
+     10,
+     "--seed",
+     21,
+     "--set",
+     "cowHungerStep=1"
+    ]
+   },
+   "r": {
+    "games": 400,
+    "win": {
+     "cow": 21.3,
+     "breeder": 23.5,
+     "butcher": 40.8,
+     "runner": 17.5,
+     "none": 0
+    },
+    "reason": {
+     "rounds": 46,
+     "fat": 8.5,
+     "poison": 40.8,
+     "allEcho": 4.8
+    },
+    "avgRounds": 8.13,
+    "avgFat": 5.27,
+    "avgKills": 5.99,
+    "firstDeath": 2.67,
+    "breederDQ": 0,
+    "avgDoses": 2.12,
+    "poisonLures": 3.03,
+    "transfers": 1.56,
+    "breederWinRound": 7.3,
+    "cowStayRate": 0,
+    "previewMissRate": 0,
+    "queueTieRate": 47.9,
+    "boxLeft": 1.93,
+    "escaped": 0.18,
+    "maxNoise": 45.73,
+    "resetOnlyPerGame": 0,
+    "forfeitsPerGame": {
+     "env": 0.68
+    }
+   },
+   "sec": 457.796
+  },
+  {
+   "cfg": {
+    "group": "10人 餓+1",
+    "name": "10 人 餓+1 種子22",
+    "args": [
+     "--players",
+     10,
+     "--seed",
+     22,
+     "--set",
+     "cowHungerStep=1"
+    ]
+   },
+   "r": {
+    "games": 400,
+    "win": {
+     "cow": 17.8,
+     "breeder": 23.3,
+     "butcher": 42.5,
+     "runner": 20.3,
+     "none": 0
+    },
+    "reason": {
+     "rounds": 47.3,
+     "fat": 5.8,
+     "poison": 42.5,
+     "allEcho": 4.5
+    },
+    "avgRounds": 7.88,
+    "avgFat": 5.1,
+    "avgKills": 5.52,
+    "firstDeath": 2.73,
+    "breederDQ": 0,
+    "avgDoses": 2.16,
+    "poisonLures": 3.09,
+    "transfers": 1.65,
+    "breederWinRound": 7.2,
+    "cowStayRate": 0,
+    "previewMissRate": 0,
+    "queueTieRate": 48.2,
+    "boxLeft": 1.91,
+    "escaped": 0.2,
+    "maxNoise": 45.53,
+    "resetOnlyPerGame": 0,
+    "forfeitsPerGame": {
+     "env": 0.71
+    }
+   },
+   "sec": 452.108
+  },
+  {
+   "cfg": {
+    "group": "10人 餓+1 肥7",
+    "name": "10 人 餓+1 肥7 種子21",
+    "args": [
+     "--players",
+     10,
+     "--seed",
+     21,
+     "--set",
+     "cowHungerStep=1",
+     "--set",
+     "fatnessWin=7"
+    ]
+   },
+   "r": {
+    "games": 400,
+    "win": {
+     "cow": 27.3,
+     "breeder": 21.5,
+     "butcher": 37.5,
+     "runner": 16.8,
+     "none": 0
+    },
+    "reason": {
+     "rounds": 38.3,
+     "fat": 23.5,
+     "poison": 37.5,
+     "allEcho": 0.8
+    },
+    "avgRounds": 7.85,
+    "avgFat": 5,
+    "avgKills": 5.72,
+    "firstDeath": 2.67,
+    "breederDQ": 0,
+    "avgDoses": 2.04,
+    "poisonLures": 2.93,
+    "transfers": 1.54,
+    "breederWinRound": 7,
+    "cowStayRate": 0,
+    "previewMissRate": 0,
+    "queueTieRate": 47.8,
+    "boxLeft": 1.97,
+    "escaped": 0.17,
+    "maxNoise": 45.6,
+    "resetOnlyPerGame": 0,
+    "forfeitsPerGame": {
+     "env": 0.67
+    }
+   },
+   "sec": 448.602
+  },
+  {
+   "cfg": {
+    "group": "10人 餓+1 肥7",
+    "name": "10 人 餓+1 肥7 種子22",
+    "args": [
+     "--players",
+     10,
+     "--seed",
+     22,
+     "--set",
+     "cowHungerStep=1",
+     "--set",
+     "fatnessWin=7"
+    ]
+   },
+   "r": {
+    "games": 400,
+    "win": {
+     "cow": 23.8,
+     "breeder": 22,
+     "butcher": 39.3,
+     "runner": 19.3,
+     "none": 0
+    },
+    "reason": {
+     "rounds": 39.3,
+     "fat": 20.5,
+     "poison": 39.3,
+     "allEcho": 1
+    },
+    "avgRounds": 7.65,
+    "avgFat": 4.87,
+    "avgKills": 5.28,
+    "firstDeath": 2.73,
+    "breederDQ": 0,
+    "avgDoses": 2.09,
+    "poisonLures": 3.01,
+    "transfers": 1.65,
+    "breederWinRound": 7,
+    "cowStayRate": 0,
+    "previewMissRate": 0,
+    "queueTieRate": 48.2,
+    "boxLeft": 1.95,
+    "escaped": 0.19,
+    "maxNoise": 45.42,
+    "resetOnlyPerGame": 0,
+    "forfeitsPerGame": {
+     "env": 0.7
+    }
+   },
+   "sec": 443.082
+  },
+  {
+   "cfg": {
+    "group": "10人 肥7",
+    "name": "10 人 肥7 種子21",
+    "args": [
+     "--players",
+     10,
+     "--seed",
+     21,
+     "--set",
+     "fatnessWin=7"
+    ]
+   },
+   "r": {
+    "games": 400,
+    "win": {
+     "cow": 22,
+     "breeder": 29,
+     "butcher": 31.3,
+     "runner": 19,
+     "none": 0
+    },
+    "reason": {
+     "rounds": 58,
+     "fat": 10.5,
+     "poison": 31.3,
+     "allEcho": 0.3
+    },
+    "avgRounds": 8.32,
+    "avgFat": 4.33,
+    "avgKills": 4.97,
+    "firstDeath": 3.22,
+    "breederDQ": 0,
+    "avgDoses": 1.72,
+    "poisonLures": 2.58,
+    "transfers": 1.91,
+    "breederWinRound": 7.4,
+    "cowStayRate": 0,
+    "previewMissRate": 0,
+    "queueTieRate": 48.4,
+    "boxLeft": 1.35,
+    "escaped": 0.19,
+    "maxNoise": 52.57,
+    "resetOnlyPerGame": 0.01,
+    "forfeitsPerGame": {
+     "env": 0.92
+    }
+   },
+   "sec": 499.917
+  },
+  {
+   "cfg": {
+    "group": "10人 肥7",
+    "name": "10 人 肥7 種子22",
+    "args": [
+     "--players",
+     10,
+     "--seed",
+     22,
+     "--set",
+     "fatnessWin=7"
+    ]
+   },
+   "r": {
+    "games": 400,
+    "win": {
+     "cow": 28.3,
+     "breeder": 24.5,
+     "butcher": 27.3,
+     "runner": 23.3,
+     "none": 0
+    },
+    "reason": {
+     "rounds": 58,
+     "fat": 14.5,
+     "poison": 27.3,
+     "allEcho": 0.3
+    },
+    "avgRounds": 8.32,
+    "avgFat": 4.23,
+    "avgKills": 4.86,
+    "firstDeath": 3.4,
+    "breederDQ": 0,
+    "avgDoses": 1.7,
+    "poisonLures": 2.59,
+    "transfers": 1.85,
+    "breederWinRound": 7.6,
+    "cowStayRate": 0,
+    "previewMissRate": 0,
+    "queueTieRate": 48.4,
+    "boxLeft": 1.68,
+    "escaped": 0.23,
+    "maxNoise": 54.17,
+    "resetOnlyPerGame": 0,
+    "forfeitsPerGame": {
+     "env": 0.85
+    }
+   },
+   "sec": 492.075
+  },
+  {
+   "cfg": {
+    "group": "11人 基準",
+    "name": "11 人 基準 種子21",
+    "args": [
+     "--players",
+     11,
+     "--seed",
+     21
+    ]
+   },
+   "r": {
+    "games": 400,
+    "win": {
+     "cow": 30.8,
+     "breeder": 22.3,
+     "butcher": 28.8,
+     "runner": 19.8,
+     "none": 0
+    },
+    "reason": {
+     "rounds": 62,
+     "fat": 5.8,
+     "poison": 28.8,
+     "allEcho": 3.5
+    },
+    "avgRounds": 9.13,
+    "avgFat": 4.93,
+    "avgKills": 5.76,
+    "firstDeath": 3.05,
+    "breederDQ": 0,
+    "avgDoses": 1.82,
+    "poisonLures": 2.9,
+    "transfers": 2.26,
+    "breederWinRound": 8.6,
+    "cowStayRate": 0,
+    "previewMissRate": 0,
+    "queueTieRate": 44.9,
+    "boxLeft": 4.45,
+    "escaped": 0.2,
+    "maxNoise": 46.52,
+    "resetOnlyPerGame": 0,
+    "forfeitsPerGame": {
+     "env": 0.51
+    }
+   },
+   "sec": 734.992
+  },
+  {
+   "cfg": {
+    "group": "11人 基準",
+    "name": "11 人 基準 種子22",
+    "args": [
+     "--players",
+     11,
+     "--seed",
+     22
+    ]
+   },
+   "r": {
+    "games": 400,
+    "win": {
+     "cow": 25.8,
+     "breeder": 26,
+     "butcher": 29.8,
+     "runner": 20.5,
+     "none": 0
+    },
+    "reason": {
+     "rounds": 61.3,
+     "fat": 7.5,
+     "poison": 29.8,
+     "allEcho": 1.5
+    },
+    "avgRounds": 8.91,
+    "avgFat": 5,
+    "avgKills": 5.72,
+    "firstDeath": 2.98,
+    "breederDQ": 0,
+    "avgDoses": 1.76,
+    "poisonLures": 2.84,
+    "transfers": 2.24,
+    "breederWinRound": 8.7,
+    "cowStayRate": 0,
+    "previewMissRate": 0,
+    "queueTieRate": 44.9,
+    "boxLeft": 4.72,
+    "escaped": 0.21,
+    "maxNoise": 44.82,
+    "resetOnlyPerGame": 0,
+    "forfeitsPerGame": {
+     "env": 0.43
+    }
+   },
+   "sec": 720.949
+  },
+  {
+   "cfg": {
+    "group": "11人 餓+1",
+    "name": "11 人 餓+1 種子21",
+    "args": [
+     "--players",
+     11,
+     "--seed",
+     21,
+     "--set",
+     "cowHungerStep=1"
+    ]
+   },
+   "r": {
+    "games": 400,
+    "win": {
+     "cow": 27.8,
+     "breeder": 20.3,
+     "butcher": 37.8,
+     "runner": 16.3,
+     "none": 0
+    },
+    "reason": {
+     "rounds": 46.5,
+     "fat": 12.3,
+     "poison": 37.8,
+     "allEcho": 3.5
+    },
+    "avgRounds": 8.65,
+    "avgFat": 5.63,
+    "avgKills": 6.41,
+    "firstDeath": 2.56,
+    "breederDQ": 0,
+    "avgDoses": 2.09,
+    "poisonLures": 3.16,
+    "transfers": 1.95,
+    "breederWinRound": 8,
+    "cowStayRate": 0,
+    "previewMissRate": 0,
+    "queueTieRate": 44.4,
+    "boxLeft": 5.33,
+    "escaped": 0.16,
+    "maxNoise": 40.97,
+    "resetOnlyPerGame": 0,
+    "forfeitsPerGame": {
+     "env": 0.44
+    }
+   },
+   "sec": 667.283
+  },
+  {
+   "cfg": {
+    "group": "11人 餓+1",
+    "name": "11 人 餓+1 種子22",
+    "args": [
+     "--players",
+     11,
+     "--seed",
+     22,
+     "--set",
+     "cowHungerStep=1"
+    ]
+   },
+   "r": {
+    "games": 400,
+    "win": {
+     "cow": 22.5,
+     "breeder": 22.3,
+     "butcher": 39.3,
+     "runner": 18.5,
+     "none": 0
+    },
+    "reason": {
+     "rounds": 47.5,
+     "fat": 9.8,
+     "poison": 39.3,
+     "allEcho": 3.5
+    },
+    "avgRounds": 8.59,
+    "avgFat": 5.52,
+    "avgKills": 6.29,
+    "firstDeath": 2.42,
+    "breederDQ": 0,
+    "avgDoses": 2.08,
+    "poisonLures": 3.12,
+    "transfers": 1.94,
+    "breederWinRound": 8.3,
+    "cowStayRate": 0,
+    "previewMissRate": 0,
+    "queueTieRate": 44,
+    "boxLeft": 5.4,
+    "escaped": 0.19,
+    "maxNoise": 41.09,
+    "resetOnlyPerGame": 0,
+    "forfeitsPerGame": {
+     "env": 0.42
+    }
+   },
+   "sec": 666.059
+  },
+  {
+   "cfg": {
+    "group": "11人 餓+1 肥7",
+    "name": "11 人 餓+1 肥7 種子21",
+    "args": [
+     "--players",
+     11,
+     "--seed",
+     21,
+     "--set",
+     "cowHungerStep=1",
+     "--set",
+     "fatnessWin=7"
+    ]
+   },
+   "r": {
+    "games": 400,
+    "win": {
+     "cow": 34.5,
+     "breeder": 19.5,
+     "butcher": 34.3,
+     "runner": 14.8,
+     "none": 0
+    },
+    "reason": {
+     "rounds": 34.8,
+     "fat": 29.3,
+     "poison": 34.3,
+     "allEcho": 1.8
+    },
+    "avgRounds": 8.28,
+    "avgFat": 5.26,
+    "avgKills": 6.06,
+    "firstDeath": 2.56,
+    "breederDQ": 0,
+    "avgDoses": 1.98,
+    "poisonLures": 3.04,
+    "transfers": 1.93,
+    "breederWinRound": 7.8,
+    "cowStayRate": 0,
+    "previewMissRate": 0,
+    "queueTieRate": 44.4,
+    "boxLeft": 5.46,
+    "escaped": 0.15,
+    "maxNoise": 40.79,
+    "resetOnlyPerGame": 0,
+    "forfeitsPerGame": {
+     "env": 0.44
+    }
+   },
+   "sec": 641.791
+  },
+  {
+   "cfg": {
+    "group": "11人 餓+1 肥7",
+    "name": "11 人 餓+1 肥7 種子22",
+    "args": [
+     "--players",
+     11,
+     "--seed",
+     22,
+     "--set",
+     "cowHungerStep=1",
+     "--set",
+     "fatnessWin=7"
+    ]
+   },
+   "r": {
+    "games": 400,
+    "win": {
+     "cow": 31.8,
+     "breeder": 20.3,
+     "butcher": 35,
+     "runner": 17.8,
+     "none": 0
+    },
+    "reason": {
+     "rounds": 36.5,
+     "fat": 27.8,
+     "poison": 35,
+     "allEcho": 0.8
+    },
+    "avgRounds": 8.28,
+    "avgFat": 5.22,
+    "avgKills": 5.96,
+    "firstDeath": 2.42,
+    "breederDQ": 0,
+    "avgDoses": 1.99,
+    "poisonLures": 3.02,
+    "transfers": 1.93,
+    "breederWinRound": 8,
+    "cowStayRate": 0,
+    "previewMissRate": 0,
+    "queueTieRate": 44,
+    "boxLeft": 5.49,
+    "escaped": 0.18,
+    "maxNoise": 41.07,
+    "resetOnlyPerGame": 0,
+    "forfeitsPerGame": {
+     "env": 0.41
+    }
+   },
+   "sec": 644.986
+  },
+  {
+   "cfg": {
+    "group": "11人 肥7",
+    "name": "11 人 肥7 種子21",
+    "args": [
+     "--players",
+     11,
+     "--seed",
+     21,
+     "--set",
+     "fatnessWin=7"
+    ]
+   },
+   "r": {
+    "games": 400,
+    "win": {
+     "cow": 35.8,
+     "breeder": 21,
+     "butcher": 27.3,
+     "runner": 18.3,
+     "none": 0
+    },
+    "reason": {
+     "rounds": 52,
+     "fat": 20,
+     "poison": 27.3,
+     "allEcho": 0.8
+    },
+    "avgRounds": 8.91,
+    "avgFat": 4.74,
+    "avgKills": 5.54,
+    "firstDeath": 3.05,
+    "breederDQ": 0,
+    "avgDoses": 1.76,
+    "poisonLures": 2.84,
+    "transfers": 2.25,
+    "breederWinRound": 8.4,
+    "cowStayRate": 0,
+    "previewMissRate": 0,
+    "queueTieRate": 44.8,
+    "boxLeft": 4.51,
+    "escaped": 0.18,
+    "maxNoise": 46.46,
+    "resetOnlyPerGame": 0,
+    "forfeitsPerGame": {
+     "env": 0.51
+    }
+   },
+   "sec": 725.865
+  },
+  {
+   "cfg": {
+    "group": "11人 肥7",
+    "name": "11 人 肥7 種子22",
+    "args": [
+     "--players",
+     11,
+     "--seed",
+     22,
+     "--set",
+     "fatnessWin=7"
+    ]
+   },
+   "r": {
+    "games": 400,
+    "win": {
+     "cow": 31.5,
+     "breeder": 24.8,
+     "butcher": 27.5,
+     "runner": 20,
+     "none": 0
+    },
+    "reason": {
+     "rounds": 51.3,
+     "fat": 20.8,
+     "poison": 27.5,
+     "allEcho": 0.5
+    },
+    "avgRounds": 8.67,
+    "avgFat": 4.76,
+    "avgKills": 5.48,
+    "firstDeath": 2.98,
+    "breederDQ": 0,
+    "avgDoses": 1.71,
+    "poisonLures": 2.78,
+    "transfers": 2.23,
+    "breederWinRound": 8.5,
+    "cowStayRate": 0,
+    "previewMissRate": 0,
+    "queueTieRate": 44.8,
+    "boxLeft": 4.81,
+    "escaped": 0.2,
+    "maxNoise": 44.78,
+    "resetOnlyPerGame": 0,
+    "forfeitsPerGame": {
+     "env": 0.42
+    }
+   },
+   "sec": 709.753
+  },
+  {
+   "cfg": {
+    "group": "12人 基準",
+    "name": "12 人 基準 種子21",
+    "args": [
+     "--players",
+     12,
+     "--seed",
+     21
+    ]
+   },
+   "r": {
+    "games": 400,
+    "win": {
+     "cow": 27.5,
+     "breeder": 23,
+     "butcher": 32,
+     "runner": 18.8,
+     "none": 0
+    },
+    "reason": {
+     "rounds": 58,
+     "fat": 8.8,
+     "poison": 32,
+     "allEcho": 1.3
+    },
+    "avgRounds": 9.02,
+    "avgFat": 5.04,
+    "avgKills": 6.19,
+    "firstDeath": 2.92,
+    "breederDQ": 0,
+    "avgDoses": 1.83,
+    "poisonLures": 2.94,
+    "transfers": 2.59,
+    "breederWinRound": 8.6,
+    "cowStayRate": 0,
+    "previewMissRate": 0,
+    "queueTieRate": 47.5,
+    "boxLeft": 3.75,
+    "escaped": 0.19,
+    "maxNoise": 48.17,
+    "resetOnlyPerGame": 0,
+    "forfeitsPerGame": {
+     "env": 0.65
+    }
+   },
+   "sec": 813.949
+  },
+  {
+   "cfg": {
+    "group": "12人 基準",
+    "name": "12 人 基準 種子22",
+    "args": [
+     "--players",
+     12,
+     "--seed",
+     22
+    ]
+   },
+   "r": {
+    "games": 400,
+    "win": {
+     "cow": 27.5,
+     "breeder": 23.5,
+     "butcher": 25.5,
+     "runner": 24.8,
+     "none": 0
+    },
+    "reason": {
+     "rounds": 66,
+     "fat": 7,
+     "poison": 25.5,
+     "allEcho": 1.5
+    },
+    "avgRounds": 9.16,
+    "avgFat": 4.89,
+    "avgKills": 6.42,
+    "firstDeath": 3.02,
+    "breederDQ": 0,
+    "avgDoses": 1.72,
+    "poisonLures": 2.82,
+    "transfers": 2.71,
+    "breederWinRound": 8.4,
+    "cowStayRate": 0,
+    "previewMissRate": 0,
+    "queueTieRate": 47.8,
+    "boxLeft": 3.82,
+    "escaped": 0.25,
+    "maxNoise": 49.31,
+    "resetOnlyPerGame": 0,
+    "forfeitsPerGame": {
+     "env": 0.64
+    }
+   },
+   "sec": 814.848
+  },
+  {
+   "cfg": {
+    "group": "12人 餓+1",
+    "name": "12 人 餓+1 種子21",
+    "args": [
+     "--players",
+     12,
+     "--seed",
+     21,
+     "--set",
+     "cowHungerStep=1"
+    ]
+   },
+   "r": {
+    "games": 400,
+    "win": {
+     "cow": 28.3,
+     "breeder": 20,
+     "butcher": 38.3,
+     "runner": 15.5,
+     "none": 0
+    },
+    "reason": {
+     "rounds": 46,
+     "fat": 13.5,
+     "poison": 38.3,
+     "allEcho": 2.3
+    },
+    "avgRounds": 8.74,
+    "avgFat": 5.8,
+    "avgKills": 6.99,
+    "firstDeath": 2.41,
+    "breederDQ": 0,
+    "avgDoses": 2.13,
+    "poisonLures": 3.13,
+    "transfers": 2.35,
+    "breederWinRound": 8.1,
+    "cowStayRate": 0,
+    "previewMissRate": 0,
+    "queueTieRate": 46.7,
+    "boxLeft": 4.61,
+    "escaped": 0.16,
+    "maxNoise": 43.27,
+    "resetOnlyPerGame": 0,
+    "forfeitsPerGame": {
+     "env": 0.56
+    }
+   },
+   "sec": 750.519
+  },
+  {
+   "cfg": {
+    "group": "12人 餓+1",
+    "name": "12 人 餓+1 種子22",
+    "args": [
+     "--players",
+     12,
+     "--seed",
+     22,
+     "--set",
+     "cowHungerStep=1"
+    ]
+   },
+   "r": {
+    "games": 400,
+    "win": {
+     "cow": 28.8,
+     "breeder": 17.5,
+     "butcher": 37.3,
+     "runner": 18,
+     "none": 0
+    },
+    "reason": {
+     "rounds": 47.5,
+     "fat": 11.5,
+     "poison": 37.3,
+     "allEcho": 3.8
+    },
+    "avgRounds": 8.93,
+    "avgFat": 5.71,
+    "avgKills": 7.09,
+    "firstDeath": 2.58,
+    "breederDQ": 0,
+    "avgDoses": 2.09,
+    "poisonLures": 3.22,
+    "transfers": 2.32,
+    "breederWinRound": 8,
+    "cowStayRate": 0,
+    "previewMissRate": 0,
+    "queueTieRate": 47.2,
+    "boxLeft": 4.43,
+    "escaped": 0.18,
+    "maxNoise": 44.58,
+    "resetOnlyPerGame": 0.01,
+    "forfeitsPerGame": {
+     "env": 0.46
+    }
+   },
+   "sec": 755.285
+  },
+  {
+   "cfg": {
+    "group": "12人 餓+1 肥7",
+    "name": "12 人 餓+1 肥7 種子21",
+    "args": [
+     "--players",
+     12,
+     "--seed",
+     21,
+     "--set",
+     "cowHungerStep=1",
+     "--set",
+     "fatnessWin=7"
+    ]
+   },
+   "r": {
+    "games": 400,
+    "win": {
+     "cow": 36.5,
+     "breeder": 18.5,
+     "butcher": 34.3,
+     "runner": 14.8,
+     "none": 0
+    },
+    "reason": {
+     "rounds": 32.5,
+     "fat": 32.8,
+     "poison": 34.3,
+     "allEcho": 0.5
+    },
+    "avgRounds": 8.32,
+    "avgFat": 5.4,
+    "avgKills": 6.56,
+    "firstDeath": 2.41,
+    "breederDQ": 0,
+    "avgDoses": 2.03,
+    "poisonLures": 3.01,
+    "transfers": 2.33,
+    "breederWinRound": 7.9,
+    "cowStayRate": 0,
+    "previewMissRate": 0,
+    "queueTieRate": 46.7,
+    "boxLeft": 4.73,
+    "escaped": 0.15,
+    "maxNoise": 43.1,
+    "resetOnlyPerGame": 0,
+    "forfeitsPerGame": {
+     "env": 0.55
+    }
+   },
+   "sec": 723.357
+  },
+  {
+   "cfg": {
+    "group": "12人 餓+1 肥7",
+    "name": "12 人 餓+1 肥7 種子22",
+    "args": [
+     "--players",
+     12,
+     "--seed",
+     22,
+     "--set",
+     "cowHungerStep=1",
+     "--set",
+     "fatnessWin=7"
+    ]
+   },
+   "r": {
+    "games": 400,
+    "win": {
+     "cow": 37,
+     "breeder": 15,
+     "butcher": 32.5,
+     "runner": 17.3,
+     "none": 0
+    },
+    "reason": {
+     "rounds": 35.3,
+     "fat": 31.8,
+     "poison": 32.5,
+     "allEcho": 0.5
+    },
+    "avgRounds": 8.52,
+    "avgFat": 5.31,
+    "avgKills": 6.64,
+    "firstDeath": 2.58,
+    "breederDQ": 0,
+    "avgDoses": 2,
+    "poisonLures": 3.12,
+    "transfers": 2.31,
+    "breederWinRound": 7.6,
+    "cowStayRate": 0,
+    "previewMissRate": 0,
+    "queueTieRate": 47.1,
+    "boxLeft": 4.55,
+    "escaped": 0.17,
+    "maxNoise": 44.45,
+    "resetOnlyPerGame": 0.01,
+    "forfeitsPerGame": {
+     "env": 0.45
+    }
+   },
+   "sec": 731.57
+  },
+  {
+   "cfg": {
+    "group": "12人 肥7",
+    "name": "12 人 肥7 種子21",
+    "args": [
+     "--players",
+     12,
+     "--seed",
+     21,
+     "--set",
+     "fatnessWin=7"
+    ]
+   },
+   "r": {
+    "games": 400,
+    "win": {
+     "cow": 32.8,
+     "breeder": 22.3,
+     "butcher": 30.3,
+     "runner": 18.5,
+     "none": 0
+    },
+    "reason": {
+     "rounds": 48.3,
+     "fat": 21.3,
+     "poison": 30.3,
+     "allEcho": 0.3
+    },
+    "avgRounds": 8.77,
+    "avgFat": 4.8,
+    "avgKills": 5.97,
+    "firstDeath": 2.92,
+    "breederDQ": 0,
+    "avgDoses": 1.77,
+    "poisonLures": 2.88,
+    "transfers": 2.58,
+    "breederWinRound": 8.5,
+    "cowStayRate": 0,
+    "previewMissRate": 0,
+    "queueTieRate": 47.5,
+    "boxLeft": 3.83,
+    "escaped": 0.19,
+    "maxNoise": 48.01,
+    "resetOnlyPerGame": 0,
+    "forfeitsPerGame": {
+     "env": 0.64
+    }
+   },
+   "sec": 790.537
+  },
+  {
+   "cfg": {
+    "group": "12人 肥7",
+    "name": "12 人 肥7 種子22",
+    "args": [
+     "--players",
+     12,
+     "--seed",
+     22,
+     "--set",
+     "fatnessWin=7"
+    ]
+   },
+   "r": {
+    "games": 400,
+    "win": {
+     "cow": 32.8,
+     "breeder": 22,
+     "butcher": 23.5,
+     "runner": 24.3,
+     "none": 0
+    },
+    "reason": {
+     "rounds": 54.8,
+     "fat": 21.3,
+     "poison": 23.5,
+     "allEcho": 0.5
+    },
+    "avgRounds": 8.93,
+    "avgFat": 4.65,
+    "avgKills": 6.19,
+    "firstDeath": 3.02,
+    "breederDQ": 0,
+    "avgDoses": 1.67,
+    "poisonLures": 2.77,
+    "transfers": 2.7,
+    "breederWinRound": 8.3,
+    "cowStayRate": 0,
+    "previewMissRate": 0,
+    "queueTieRate": 47.8,
+    "boxLeft": 3.86,
+    "escaped": 0.24,
+    "maxNoise": 49.21,
+    "resetOnlyPerGame": 0,
+    "forfeitsPerGame": {
+     "env": 0.64
+    }
+   },
+   "sec": 796.138
+  },
+  {
+   "cfg": {
+    "group": "13人 基準",
+    "name": "13 人 基準 種子21",
+    "args": [
+     "--players",
+     13,
+     "--seed",
+     21
+    ]
+   },
+   "r": {
+    "games": 400,
+    "win": {
+     "cow": 24,
+     "breeder": 28,
+     "butcher": 25.8,
+     "runner": 23.8,
+     "none": 0
+    },
+    "reason": {
+     "rounds": 64.8,
+     "fat": 9.3,
+     "poison": 25.8,
+     "allEcho": 0.3
+    },
+    "avgRounds": 8.62,
+    "avgFat": 4.68,
+    "avgKills": 6.25,
+    "firstDeath": 2.91,
+    "breederDQ": 0,
+    "avgDoses": 1.83,
+    "poisonLures": 3.07,
+    "transfers": 2.77,
+    "breederWinRound": 8.1,
+    "cowStayRate": 0,
+    "previewMissRate": 0,
+    "queueTieRate": 49.4,
+    "boxLeft": 3.71,
+    "escaped": 0.24,
+    "maxNoise": 48.87,
+    "resetOnlyPerGame": 0.01,
+    "forfeitsPerGame": {
+     "env": 0.7
+    }
+   },
+   "sec": 882.196
+  },
+  {
+   "cfg": {
+    "group": "13人 基準",
+    "name": "13 人 基準 種子22",
+    "args": [
+     "--players",
+     13,
+     "--seed",
+     22
+    ]
+   },
+   "r": {
+    "games": 400,
+    "win": {
+     "cow": 22.5,
+     "breeder": 26.8,
+     "butcher": 24,
+     "runner": 27,
+     "none": 0
+    },
+    "reason": {
+     "rounds": 69,
+     "fat": 6.3,
+     "poison": 24,
+     "allEcho": 0.8
+    },
+    "avgRounds": 8.78,
+    "avgFat": 4.75,
+    "avgKills": 6.27,
+    "firstDeath": 2.94,
+    "breederDQ": 0,
+    "avgDoses": 1.91,
+    "poisonLures": 3.17,
+    "transfers": 2.74,
+    "breederWinRound": 8.3,
+    "cowStayRate": 0,
+    "previewMissRate": 0,
+    "queueTieRate": 49.1,
+    "boxLeft": 3.56,
+    "escaped": 0.27,
+    "maxNoise": 50.1,
+    "resetOnlyPerGame": 0,
+    "forfeitsPerGame": {
+     "env": 0.72
+    }
+   },
+   "sec": 889.717
+  },
+  {
+   "cfg": {
+    "group": "13人 餓+1",
+    "name": "13 人 餓+1 種子21",
+    "args": [
+     "--players",
+     13,
+     "--seed",
+     21,
+     "--set",
+     "cowHungerStep=1"
+    ]
+   },
+   "r": {
+    "games": 400,
+    "win": {
+     "cow": 24.3,
+     "breeder": 21.5,
+     "butcher": 37.8,
+     "runner": 19.3,
+     "none": 0
+    },
+    "reason": {
+     "rounds": 47.8,
+     "fat": 13,
+     "poison": 37.8,
+     "allEcho": 1.5
+    },
+    "avgRounds": 8.38,
+    "avgFat": 5.63,
+    "avgKills": 7.33,
+    "firstDeath": 2.44,
+    "breederDQ": 0,
+    "avgDoses": 2.34,
+    "poisonLures": 3.6,
+    "transfers": 2.47,
+    "breederWinRound": 8,
+    "cowStayRate": 0,
+    "previewMissRate": 0,
+    "queueTieRate": 48.9,
+    "boxLeft": 4.27,
+    "escaped": 0.19,
+    "maxNoise": 43.75,
+    "resetOnlyPerGame": 0.01,
+    "forfeitsPerGame": {
+     "env": 0.6
+    }
+   },
+   "sec": 815.825
+  },
+  {
+   "cfg": {
+    "group": "13人 餓+1",
+    "name": "13 人 餓+1 種子22",
+    "args": [
+     "--players",
+     13,
+     "--seed",
+     22,
+     "--set",
+     "cowHungerStep=1"
+    ]
+   },
+   "r": {
+    "games": 400,
+    "win": {
+     "cow": 22.3,
+     "breeder": 23,
+     "butcher": 34.5,
+     "runner": 21.3,
+     "none": 0
+    },
+    "reason": {
+     "rounds": 54.3,
+     "fat": 10.5,
+     "poison": 34.5,
+     "allEcho": 0.8
+    },
+    "avgRounds": 8.49,
+    "avgFat": 5.57,
+    "avgKills": 7.12,
+    "firstDeath": 2.56,
+    "breederDQ": 0,
+    "avgDoses": 2.4,
+    "poisonLures": 3.63,
+    "transfers": 2.32,
+    "breederWinRound": 8.1,
+    "cowStayRate": 0,
+    "previewMissRate": 0,
+    "queueTieRate": 48.6,
+    "boxLeft": 4.24,
+    "escaped": 0.21,
+    "maxNoise": 44.76,
+    "resetOnlyPerGame": 0,
+    "forfeitsPerGame": {
+     "env": 0.59
+    }
+   },
+   "sec": 822.803
+  },
+  {
+   "cfg": {
+    "group": "13人 餓+1 肥7",
+    "name": "13 人 餓+1 肥7 種子21",
+    "args": [
+     "--players",
+     13,
+     "--seed",
+     21,
+     "--set",
+     "cowHungerStep=1",
+     "--set",
+     "fatnessWin=7"
+    ]
+   },
+   "r": {
+    "games": 400,
+    "win": {
+     "cow": 33,
+     "breeder": 19.8,
+     "butcher": 33.8,
+     "runner": 17.3,
+     "none": 0
+    },
+    "reason": {
+     "rounds": 35,
+     "fat": 30.8,
+     "poison": 33.8,
+     "allEcho": 0.5
+    },
+    "avgRounds": 7.99,
+    "avgFat": 5.26,
+    "avgKills": 6.92,
+    "firstDeath": 2.44,
+    "breederDQ": 0,
+    "avgDoses": 2.24,
+    "poisonLures": 3.48,
+    "transfers": 2.44,
+    "breederWinRound": 7.8,
+    "cowStayRate": 0,
+    "previewMissRate": 0,
+    "queueTieRate": 48.8,
+    "boxLeft": 4.37,
+    "escaped": 0.17,
+    "maxNoise": 43.63,
+    "resetOnlyPerGame": 0.01,
+    "forfeitsPerGame": {
+     "env": 0.58
+    }
+   },
+   "sec": 794.983
+  },
+  {
+   "cfg": {
+    "group": "13人 餓+1 肥7",
+    "name": "13 人 餓+1 肥7 種子22",
+    "args": [
+     "--players",
+     13,
+     "--seed",
+     22,
+     "--set",
+     "cowHungerStep=1",
+     "--set",
+     "fatnessWin=7"
+    ]
+   },
+   "r": {
+    "games": 400,
+    "win": {
+     "cow": 34.8,
+     "breeder": 20.8,
+     "butcher": 28,
+     "runner": 20,
+     "none": 0
+    },
+    "reason": {
+     "rounds": 40.3,
+     "fat": 31.5,
+     "poison": 28,
+     "allEcho": 0.3
+    },
+    "avgRounds": 8.1,
+    "avgFat": 5.2,
+    "avgKills": 6.67,
+    "firstDeath": 2.56,
+    "breederDQ": 0,
+    "avgDoses": 2.27,
+    "poisonLures": 3.48,
+    "transfers": 2.29,
+    "breederWinRound": 7.8,
+    "cowStayRate": 0,
+    "previewMissRate": 0,
+    "queueTieRate": 48.4,
+    "boxLeft": 4.34,
+    "escaped": 0.2,
+    "maxNoise": 44.57,
+    "resetOnlyPerGame": 0,
+    "forfeitsPerGame": {
+     "env": 0.57
+    }
+   },
+   "sec": 793.251
+  },
+  {
+   "cfg": {
+    "group": "13人 肥7",
+    "name": "13 人 肥7 種子21",
+    "args": [
+     "--players",
+     13,
+     "--seed",
+     21,
+     "--set",
+     "fatnessWin=7"
+    ]
+   },
+   "r": {
+    "games": 400,
+    "win": {
+     "cow": 28.3,
+     "breeder": 27.3,
+     "butcher": 23.5,
+     "runner": 23.3,
+     "none": 0
+    },
+    "reason": {
+     "rounds": 57.3,
+     "fat": 19.3,
+     "poison": 23.5,
+     "allEcho": 0
+    },
+    "avgRounds": 8.37,
+    "avgFat": 4.43,
+    "avgKills": 5.98,
+    "firstDeath": 2.91,
+    "breederDQ": 0,
+    "avgDoses": 1.76,
+    "poisonLures": 2.99,
+    "transfers": 2.76,
+    "breederWinRound": 8,
+    "cowStayRate": 0,
+    "previewMissRate": 0,
+    "queueTieRate": 49.3,
+    "boxLeft": 3.78,
+    "escaped": 0.23,
+    "maxNoise": 48.81,
+    "resetOnlyPerGame": 0.01,
+    "forfeitsPerGame": {
+     "env": 0.69
+    }
+   },
+   "sec": 833.296
+  },
+  {
+   "cfg": {
+    "group": "13人 肥7",
+    "name": "13 人 肥7 種子22",
+    "args": [
+     "--players",
+     13,
+     "--seed",
+     22,
+     "--set",
+     "fatnessWin=7"
+    ]
+   },
+   "r": {
+    "games": 400,
+    "win": {
+     "cow": 31.5,
+     "breeder": 25.3,
+     "butcher": 19.8,
+     "runner": 26,
+     "none": 0
+    },
+    "reason": {
+     "rounds": 59,
+     "fat": 21.3,
+     "poison": 19.8,
+     "allEcho": 0
+    },
+    "avgRounds": 8.54,
+    "avgFat": 4.51,
+    "avgKills": 5.98,
+    "firstDeath": 2.94,
+    "breederDQ": 0,
+    "avgDoses": 1.83,
+    "poisonLures": 3.08,
+    "transfers": 2.72,
+    "breederWinRound": 8.1,
+    "cowStayRate": 0,
+    "previewMissRate": 0,
+    "queueTieRate": 49,
+    "boxLeft": 3.63,
+    "escaped": 0.26,
+    "maxNoise": 49.98,
+    "resetOnlyPerGame": 0,
+    "forfeitsPerGame": {
+     "env": 0.7
+    }
+   },
+   "sec": 820.545
+  },
+  {
+   "cfg": {
+    "group": "14人 基準",
+    "name": "14 人 基準 種子21",
+    "args": [
+     "--players",
+     14,
+     "--seed",
+     21
+    ]
+   },
+   "r": {
+    "games": 400,
+    "win": {
+     "cow": 25.3,
+     "breeder": 22,
+     "butcher": 30,
+     "runner": 24,
+     "none": 0
+    },
+    "reason": {
+     "rounds": 62.3,
+     "fat": 6.8,
+     "poison": 30,
+     "allEcho": 1
+    },
+    "avgRounds": 8.85,
+    "avgFat": 4.77,
+    "avgKills": 6.68,
+    "firstDeath": 2.9,
+    "breederDQ": 0,
+    "avgDoses": 1.85,
+    "poisonLures": 3.04,
+    "transfers": 3.15,
+    "breederWinRound": 8.1,
+    "cowStayRate": 0,
+    "previewMissRate": 0,
+    "queueTieRate": 51.8,
+    "boxLeft": 2.68,
+    "escaped": 0.24,
+    "maxNoise": 52.53,
+    "resetOnlyPerGame": 0,
+    "forfeitsPerGame": {
+     "env": 0.76
+    }
+   },
+   "sec": 883.706
+  },
+  {
+   "cfg": {
+    "group": "14人 基準",
+    "name": "14 人 基準 種子22",
+    "args": [
+     "--players",
+     14,
+     "--seed",
+     22
+    ]
+   },
+   "r": {
+    "games": 400,
+    "win": {
+     "cow": 26.5,
+     "breeder": 28.3,
+     "butcher": 26.5,
+     "runner": 21.3,
+     "none": 0
+    },
+    "reason": {
+     "rounds": 65.8,
+     "fat": 6.5,
+     "poison": 26.5,
+     "allEcho": 1.3
+    },
+    "avgRounds": 8.89,
+    "avgFat": 4.75,
+    "avgKills": 6.85,
+    "firstDeath": 2.94,
+    "breederDQ": 0,
+    "avgDoses": 1.81,
+    "poisonLures": 3,
+    "transfers": 3.27,
+    "breederWinRound": 8.3,
+    "cowStayRate": 0,
+    "previewMissRate": 0,
+    "queueTieRate": 51.5,
+    "boxLeft": 2.51,
+    "escaped": 0.21,
+    "maxNoise": 54.18,
+    "resetOnlyPerGame": 0.01,
+    "forfeitsPerGame": {
+     "env": 0.76
+    }
+   },
+   "sec": 874.145
+  },
+  {
+   "cfg": {
+    "group": "14人 餓+1",
+    "name": "14 人 餓+1 種子21",
+    "args": [
+     "--players",
+     14,
+     "--seed",
+     21,
+     "--set",
+     "cowHungerStep=1"
+    ]
+   },
+   "r": {
+    "games": 400,
+    "win": {
+     "cow": 24.8,
+     "breeder": 23.5,
+     "butcher": 41,
+     "runner": 16,
+     "none": 0
+    },
+    "reason": {
+     "rounds": 45.8,
+     "fat": 11.3,
+     "poison": 41,
+     "allEcho": 2
+    },
+    "avgRounds": 8.66,
+    "avgFat": 5.73,
+    "avgKills": 8.05,
+    "firstDeath": 2.54,
+    "breederDQ": 0,
+    "avgDoses": 2.32,
+    "poisonLures": 3.53,
+    "transfers": 2.81,
+    "breederWinRound": 8.4,
+    "cowStayRate": 0,
+    "previewMissRate": 0,
+    "queueTieRate": 51.2,
+    "boxLeft": 3.24,
+    "escaped": 0.16,
+    "maxNoise": 47.54,
+    "resetOnlyPerGame": 0,
+    "forfeitsPerGame": {
+     "env": 0.65
+    }
+   },
+   "sec": 820.248
+  },
+  {
+   "cfg": {
+    "group": "14人 餓+1",
+    "name": "14 人 餓+1 種子22",
+    "args": [
+     "--players",
+     14,
+     "--seed",
+     22,
+     "--set",
+     "cowHungerStep=1"
+    ]
+   },
+   "r": {
+    "games": 400,
+    "win": {
+     "cow": 23.5,
+     "breeder": 22.8,
+     "butcher": 37.5,
+     "runner": 17.5,
+     "none": 0
+    },
+    "reason": {
+     "rounds": 51.5,
+     "fat": 9.5,
+     "poison": 37.5,
+     "allEcho": 1.5
+    },
+    "avgRounds": 8.52,
+    "avgFat": 5.47,
+    "avgKills": 7.76,
+    "firstDeath": 2.52,
+    "breederDQ": 0,
+    "avgDoses": 2.19,
+    "poisonLures": 3.41,
+    "transfers": 2.9,
+    "breederWinRound": 8.3,
+    "cowStayRate": 0,
+    "previewMissRate": 0,
+    "queueTieRate": 51.2,
+    "boxLeft": 3.02,
+    "escaped": 0.18,
+    "maxNoise": 47.77,
+    "resetOnlyPerGame": 0,
+    "forfeitsPerGame": {
+     "env": 0.64
+    }
+   },
+   "sec": 806.444
+  },
+  {
+   "cfg": {
+    "group": "14人 餓+1 肥7",
+    "name": "14 人 餓+1 肥7 種子21",
+    "args": [
+     "--players",
+     14,
+     "--seed",
+     21,
+     "--set",
+     "cowHungerStep=1",
+     "--set",
+     "fatnessWin=7"
+    ]
+   },
+   "r": {
+    "games": 400,
+    "win": {
+     "cow": 35.3,
+     "breeder": 19,
+     "butcher": 35.3,
+     "runner": 15.5,
+     "none": 0
+    },
+    "reason": {
+     "rounds": 32.8,
+     "fat": 31.5,
+     "poison": 35.3,
+     "allEcho": 0.5
+    },
+    "avgRounds": 8.27,
+    "avgFat": 5.35,
+    "avgKills": 7.57,
+    "firstDeath": 2.54,
+    "breederDQ": 0,
+    "avgDoses": 2.19,
+    "poisonLures": 3.38,
+    "transfers": 2.79,
+    "breederWinRound": 7.9,
+    "cowStayRate": 0,
+    "previewMissRate": 0,
+    "queueTieRate": 51.1,
+    "boxLeft": 3.32,
+    "escaped": 0.16,
+    "maxNoise": 47.32,
+    "resetOnlyPerGame": 0,
+    "forfeitsPerGame": {
+     "env": 0.65
+    }
+   },
+   "sec": 663.139
+  },
+  {
+   "cfg": {
+    "group": "14人 餓+1 肥7",
+    "name": "14 人 餓+1 肥7 種子22",
+    "args": [
+     "--players",
+     14,
+     "--seed",
+     22,
+     "--set",
+     "cowHungerStep=1",
+     "--set",
+     "fatnessWin=7"
+    ]
+   },
+   "r": {
+    "games": 400,
+    "win": {
+     "cow": 32.5,
+     "breeder": 20.3,
+     "butcher": 33.3,
+     "runner": 16,
+     "none": 0
+    },
+    "reason": {
+     "rounds": 39,
+     "fat": 27.3,
+     "poison": 33.3,
+     "allEcho": 0.5
+    },
+    "avgRounds": 8.18,
+    "avgFat": 5.15,
+    "avgKills": 7.34,
+    "firstDeath": 2.52,
+    "breederDQ": 0,
+    "avgDoses": 2.12,
+    "poisonLures": 3.32,
+    "transfers": 2.88,
+    "breederWinRound": 8,
+    "cowStayRate": 0,
+    "previewMissRate": 0,
+    "queueTieRate": 51.1,
+    "boxLeft": 3.1,
+    "escaped": 0.16,
+    "maxNoise": 47.63,
+    "resetOnlyPerGame": 0,
+    "forfeitsPerGame": {
+     "env": 0.62
+    }
+   },
+   "sec": 607.299
+  },
+  {
+   "cfg": {
+    "group": "14人 肥7",
+    "name": "14 人 肥7 種子21",
+    "args": [
+     "--players",
+     14,
+     "--seed",
+     21,
+     "--set",
+     "fatnessWin=7"
+    ]
+   },
+   "r": {
+    "games": 400,
+    "win": {
+     "cow": 29.3,
+     "breeder": 20.8,
+     "butcher": 29,
+     "runner": 23.8,
+     "none": 0
+    },
+    "reason": {
+     "rounds": 52,
+     "fat": 18.5,
+     "poison": 29,
+     "allEcho": 0.5
+    },
+    "avgRounds": 8.64,
+    "avgFat": 4.56,
+    "avgKills": 6.4,
+    "firstDeath": 2.9,
+    "breederDQ": 0,
+    "avgDoses": 1.8,
+    "poisonLures": 2.99,
+    "transfers": 3.13,
+    "breederWinRound": 7.9,
+    "cowStayRate": 0,
+    "previewMissRate": 0,
+    "queueTieRate": 51.8,
+    "boxLeft": 2.73,
+    "escaped": 0.24,
+    "maxNoise": 52.4,
+    "resetOnlyPerGame": 0,
+    "forfeitsPerGame": {
+     "env": 0.76
+    }
+   },
+   "sec": 513.797
+  },
+  {
+   "cfg": {
+    "group": "14人 肥7",
+    "name": "14 人 肥7 種子22",
+    "args": [
+     "--players",
+     14,
+     "--seed",
+     22,
+     "--set",
+     "fatnessWin=7"
+    ]
+   },
+   "r": {
+    "games": 400,
+    "win": {
+     "cow": 32.3,
+     "breeder": 26.5,
+     "butcher": 25,
+     "runner": 20.3,
+     "none": 0
+    },
+    "reason": {
+     "rounds": 54.5,
+     "fat": 20,
+     "poison": 25,
+     "allEcho": 0.5
+    },
+    "avgRounds": 8.67,
+    "avgFat": 4.54,
+    "avgKills": 6.62,
+    "firstDeath": 2.94,
+    "breederDQ": 0,
+    "avgDoses": 1.75,
+    "poisonLures": 2.94,
+    "transfers": 3.26,
+    "breederWinRound": 8.1,
+    "cowStayRate": 0,
+    "previewMissRate": 0,
+    "queueTieRate": 51.4,
+    "boxLeft": 2.58,
+    "escaped": 0.2,
+    "maxNoise": 54.16,
+    "resetOnlyPerGame": 0.01,
+    "forfeitsPerGame": {
+     "env": 0.76
+    }
+   },
+   "sec": 492.559
+  }
+ ]
+}

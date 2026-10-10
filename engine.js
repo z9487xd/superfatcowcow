@@ -203,7 +203,7 @@
 
     // 牛在中央
     var ccenter = cell(Math.floor(N / 2), Math.floor(N / 2), N);
-    state.cow = { cell: ccenter, fatness: 1, doses: [], target: null };
+    state.cow = { cell: ccenter, fatness: 1, doses: [], target: null, hunger: 0 };
 
     // 裝置隨機分配 (避開牛起點, 一房最多一個)
     var avail = [];
@@ -697,6 +697,14 @@
 
   // ================= 牛的演算法 (核心) =================
   // 傳回 {stay, target, reached, path, killedCells, splashCells, smashed, ate, evolved, poisonedThisMeal}
+  // 牛這回合能走幾步: 肥度 + 加成; 餓肚子 (連續沒吃到的回合數) 每回合再 +cowHungerStep
+  function cowSteps(state) {
+    var cfg = state.config, fat = state.cow.fatness;
+    var hunger = Math.min(state.cow.hunger || 0, cfg.cowHungerMax || 99);
+    return fat + cfg.cowMoveBonus + (cfg.cowLateBonus && fat >= (cfg.cowLateFat || 5) ? cfg.cowLateBonus : 0) +
+      (cfg.cowHungerStep || 0) * hunger;
+  }
+
   // 不改動 state (供預告線); 真正套用在 applyCowMove
   function computeCowMove(state) {
     var cowCell = state.cow.cell;
@@ -712,7 +720,7 @@
     if (target == null) { result.stay = true; return result; }
     result.target = target;
 
-    var steps = fatness + cfg.cowMoveBonus + (cfg.cowLateBonus && fatness >= (cfg.cowLateFat || 5) ? cfg.cowLateBonus : 0);
+    var steps = cowSteps(state);
     var path;
 
     if (fatness < cfg.fatnessSmash) {
@@ -983,6 +991,7 @@
   function applyCowMove(state) {
     var mv = computeCowMove(state);
     if (mv.stay) {
+      state.cow.hunger = (state.cow.hunger || 0) + 1;
       logLine(state, state.round, '牛: 全場噪點 0, 原地不動');
       return mv;
     }
@@ -1002,6 +1011,7 @@
 
     // 進食/進化
     if (mv.reached) {
+      state.cow.hunger = 0;
       var room = state.rooms[mv.target];
       var ate = room.noise;
       var hadPoison = room.poison && room.noise > 0;
@@ -1018,7 +1028,8 @@
         logLine(state, state.round, '牛中毒! 目前 ' + state.cow.doses.length + ' 劑');
       }
     } else {
-      logLine(state, state.round, '牛半路停下 @' + cellName(end, state.N) + ' (不吃不長)');
+      state.cow.hunger = (state.cow.hunger || 0) + 1;
+      logLine(state, state.round, '牛半路停下 @' + cellName(end, state.N) + ' (不吃不長)' + (state.config.cowHungerStep ? ', 餓了 ' + state.cow.hunger + ' 回合' : ''));
     }
 
     // 走到出口的人 (被牛帶到? 不會; 但出口在路徑上與人無關)
@@ -1228,7 +1239,7 @@
     declareCard: declareCard, forfeitCard: forfeitCard, giveSamples: giveSamples, dropSamples: dropSamples, remainingCards: remainingCards, advanceActor: advanceActor, resolveRound: resolveRound,
     // 查詢
     currentActor: currentActor, expectedCardCount: expectedCardCount, handList: handList,
-    computeQueue: computeQueue, computePreview: computePreview, computeCowMove: computeCowMove,
+    computeQueue: computeQueue, computePreview: computePreview, computeCowMove: computeCowMove, cowSteps: cowSteps,
     selectCowTarget: selectCowTarget, bfsDist: bfsDist, shortestPath: shortestPath,
     shortestPathMinTurns: shortestPathMinTurns, isConnected: isConnected, isSealed: isSealed,
     refreshExits: refreshExits,

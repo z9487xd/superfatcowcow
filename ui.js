@@ -493,7 +493,7 @@
     var st = G.state;
     $('roundNo').textContent = st.round + ' / ' + st.rounds;
     $('cowFat').textContent = st.cow.fatness + '/' + st.config.fatnessWin;
-    $('cowSteps').textContent = st.cow.fatness + st.config.cowMoveBonus + (st.config.cowLateBonus && st.cow.fatness >= (st.config.cowLateFat || 5) ? st.config.cowLateBonus : 0);
+    $('cowSteps').textContent = E.cowSteps(st) + (st.cow.hunger && st.config.cowHungerStep ? ' (餓 ' + st.cow.hunger + ')' : '');
     $('cowPoison').textContent = st.cow.doses.length + '/' + st.config.poisonDoseLimit;
     $('cowPoison').parentNode.title = st.cow.doses.length ? '各劑剩餘回合: ' + st.cow.doses.map(function (d) { return d.left; }).join(', ') : '';
 

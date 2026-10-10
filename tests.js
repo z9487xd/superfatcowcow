@@ -521,6 +521,16 @@
     }
   });
 
+  test('餓肚子加速: 沒吃到每回合步數 +cowHungerStep, 吃到歸零', function () {
+    var s = blankState(5, 1);
+    s.config.cowHungerStep = 1;
+    eq(E.cowSteps(s), s.cow.fatness + s.config.cowMoveBonus, '不餓');
+    s.cow.hunger = 2;
+    eq(E.cowSteps(s), s.cow.fatness + s.config.cowMoveBonus + 2, '餓 2 回合');
+    s.config.cowHungerMax = 1;
+    eq(E.cowSteps(s), s.cow.fatness + s.config.cowMoveBonus + 1, '上限 1');
+  });
+
   function blankStateClone(s) { return E.cloneState(s); }
 
   // ---- 輸出 ----

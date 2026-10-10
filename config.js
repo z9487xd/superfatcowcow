@@ -51,6 +51,8 @@
     cowMoveBonus: 1,            // 牛移動格數 = 肥度 + cowMoveBonus
     cowLateBonus: 0,            // (測試中) 肥度 >= cowLateFat 時步數再 +N; 0 = 不用
     cowLateFat: 5,
+    cowHungerStep: 0,           // (測試中) 牛連續 N 回合沒吃到, 步數再 +N×此值; 吃到歸零; 0 = 不用
+    cowHungerMax: 99,           // (測試中) 餓肚子加成最多算幾回合
     firstWinEnds: 1,            // 任一陣營達成 → 遊戲立刻結束 (牛的同一次行動中達成的陣營一起贏); 0 = 舊規則: 勝利鎖定、遊戲繼續
     timeoutCowWins: 1,          // v10: 第 12 回合結束時沒有任何陣營獲勝 → 牛獲勝 (沒有平手); 0 = 舊規則 (可能無人勝)
 

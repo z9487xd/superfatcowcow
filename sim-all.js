@@ -565,6 +565,27 @@ if (process.argv[3] === 'v17e') {
   addE(8, '出口離箱3 只第1回合', ['exitBoxMinDist=3', 'exitBoxFirstOnly=1']);
 }
 
+// 牛餓肚子加速 / 牛勝肥度 7  node sim-all.js 400 v18a
+if (process.argv[3] === 'v18a') {
+  CONFIGS = [];
+  var V18 = [['基準', []], ['餓+1', ['cowHungerStep=1']], ['餓+1 肥7', ['cowHungerStep=1', 'fatnessWin=7']], ['肥7', ['fatnessWin=7']]];
+  [7, 8, 9, 10, 11, 12, 13, 14].forEach(function (n) { V18.forEach(function (v) { [21, 22].forEach(function (seed) {
+    var a = ['--players', n, '--seed', seed]; v[1].forEach(function (kv) { a.push('--set', kv); });
+    CONFIGS.push({ group: n + '人 ' + v[0], name: n + ' 人 ' + v[0] + ' 種子' + seed, args: a });
+  }); }); });
+}
+
+// 餓肚子 +1 之後屠夫太強: 下毒改回 +3, 肥度 9/8, 餓肚子上限  node sim-all.js 400 v18b
+if (process.argv[3] === 'v18b') {
+  CONFIGS = [];
+  var V18B = [['餓1 毒3 肥9', ['cowHungerStep=1', 'poisonBonus=0']], ['餓1 毒3 肥8', ['cowHungerStep=1', 'poisonBonus=0', 'fatnessWin=8']],
+    ['餓1上限2 毒3 肥8', ['cowHungerStep=1', 'cowHungerMax=2', 'poisonBonus=0', 'fatnessWin=8']]];
+  [7, 8, 9, 10, 11, 12, 13, 14].forEach(function (n) { V18B.forEach(function (v) { [21, 22].forEach(function (seed) {
+    var a = ['--players', n, '--seed', seed]; v[1].forEach(function (kv) { a.push('--set', kv); });
+    CONFIGS.push({ group: n + '人 ' + v[0], name: n + ' 人 ' + v[0] + ' 種子' + seed, args: a });
+  }); }); });
+}
+
 function run(cfg) {
   return new Promise(function (resolve) {
     var args = [__dirname + '/sim.js', '--games', GAMES, '--json'].concat(cfg.args).map(String);
