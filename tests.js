@@ -132,27 +132,13 @@
   });
 
   // ============ 8. 起點不殺人 ============
-  test('起點不殺人 (cowStartKills = 0): 路徑起點不列入殺人格', function () {
+  test('起點不殺人: 路徑起點不列入殺人格', function () {
     var s = blankState(5);
-    s.config.cowStartKills = 0;
     s.cow.cell = 12; s.cow.fatness = 1;
     s.rooms[13].noise = 5;           // 目標 (2,3), 路徑 12→13
     var mv = E.computeCowMove(s);
     assert(!arrHas(mv.killedCells, 12), '起點 12 不殺人');
     assert(arrHas(mv.killedCells, 13), '終點 13 殺人');
-  });
-
-  test('v19 起點也殺人: 牛有移動時起點列入殺人格, 牛沒動不算', function () {
-    var s = blankState(5);
-    s.cow.cell = 12; s.cow.fatness = 1;
-    s.rooms[13].noise = 5;
-    var mv = E.computeCowMove(s);
-    assert(arrHas(mv.killedCells, 12), '起點 12 殺人');
-    assert(arrHas(mv.killedCells, 13), '終點 13 殺人');
-    var t = blankState(5);
-    t.cow.cell = 12; t.cow.fatness = 1;  // 全場 0 噪點 → 牛不動
-    var mv2 = E.computeCowMove(t);
-    assert(mv2.stay && !arrHas(mv2.killedCells, 12), '牛沒動, 起點不殺人');
   });
 
   // ============ 額外: 連通性保證 ============

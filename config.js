@@ -47,7 +47,6 @@
     // 肥度門檻
     fatnessSmash: 4,            // 肥度 >= 此值 → 撞牆 (不繞路)
     fatnessSplash: 7,           // 肥度 >= 此值 → 路徑波及旁邊
-    cowStartKills: 1,           // v19: 1 = 牛出發時, 站在牛那一格的人也會被輾 (牛沒動就不算); 0 = 起點安全 (v18 以前)
     fatnessWin: 9,              // 肥度達此值 → 牛獲勝
     cowMoveBonus: 1,            // 牛移動格數 = 肥度 + cowMoveBonus
     cowLateBonus: 0,            // (測試中) 肥度 >= cowLateFat 時步數再 +N; 0 = 不用
